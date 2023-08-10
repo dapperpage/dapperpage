@@ -66,32 +66,7 @@ function scrollR(x) {
         });
       });
     }
-  });
-  
-  
-  
-  //PLAY ON HOVER//
-  /*document.addEventListener('DOMContentLoaded', function() {
-    var hoverImages = document.getElementsByClassName('hover-image');
-  
-    // Attach event listeners to each hover image
-    Array.from(hoverImages).forEach(function(hoverImage) {
-      hoverImage.addEventListener('mouseover', function() {
-        var audioElement = hoverImage.querySelector('audio');
-        audioElement.play();
-      });
-  
-      hoverImage.addEventListener('mouseout', function() {
-        var audioElement = hoverImage.querySelector('audio');
-        audioElement.pause();
-        audioElement.currentTime = 0;
-      });
-    });
-  });*/
-  
-  
-  
-  
+  });  
   
   //GLOBAL MUTE BUTTON//
   document.addEventListener('DOMContentLoaded', function() {

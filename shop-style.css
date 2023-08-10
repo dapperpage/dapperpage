@@ -1,0 +1,42 @@
+*:focus {
+	outline: none;
+}
+
+.item-description {
+	overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.items-slider {
+	scroll-snap-type: inline mandatory;
+  scroll-padding: 1rem;
+}
+
+.items-collection-container > * {
+	scroll-snap-align: start;
+}
+
+.items-slider::-webkit-scrollbar {
+	height: 10px;
+}
+
+.items-slider::-webkit-scrollbar-track {
+	background-image: -webkit-linear-gradient(
+  	112deg,
+    #e2b25b 0%,
+    #fbf5b7 5%,
+    #e4c27a 23%,
+    #fcf6ba 30%,
+    #eed195 50%
+  );
+  border-radius: 100vw;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.items-slider::-webkit-scrollbar-thumb {
+	background: #333333;
+  border-radius: 100vw;
+}

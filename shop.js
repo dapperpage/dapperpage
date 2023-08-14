@@ -30,8 +30,8 @@ function scrollR(x) {
       console.log(rm);
       const options = {
               root: null,
-              threshold: 0.25,
-              rootMargin: "0% -50% -15% -5%"
+              threshold: 0,
+              rootMargin: "0% " + rm + "px -15% -16px"
           };
       
       var observer = new IntersectionObserver(function(entries) {

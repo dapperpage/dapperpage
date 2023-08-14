@@ -26,11 +26,11 @@ function scrollR(x) {
     if (isMobile) {
       // Create an Intersection Observer instance
       const width = window.innerWidth;
-      const rm = 300 - width;
+      const rm = 136 - width;
       console.log(rm);
       const options = {
               root: null,
-              threshold: 0.1,
+              threshold: 0,
               rootMargin: "0% " + rm + "px -15% -16px"
           };
       

@@ -51,8 +51,6 @@ function scrollR(x) {
           }
         });
       }, options);
-
-      observer.rootMargin.style.border = "1px solid green";
   
       // Attach the observer to each hover image
       Array.from(hoverImages).forEach(function(hoverImage) {

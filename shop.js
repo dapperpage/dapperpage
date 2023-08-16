@@ -36,11 +36,11 @@ function scrollR(x) {
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
-            var audioElement = entry.target.querySelector('audio');
+            var audioElement = entry.target.querySelector('audio-insert');
             audioElement.play();
             entry.target.closest('.item-container').classList.add('flipped');
           } else {
-            var audioElement = entry.target.querySelector('audio');
+            var audioElement = entry.target.querySelector('audio-insert');
             audioElement.pause();
             audioElement.currentTime = 0;
             entry.target.closest('.item-container').classList.remove('flipped');
@@ -55,7 +55,7 @@ function scrollR(x) {
     } else {
       // Attach event listeners for mouseover and mouseout events
       Array.from(hoverImages).forEach(function(hoverImage) {
-        var audioElement = hoverImage.querySelector('audio');
+        var audioElement = hoverImage.querySelector('audio-insert');
   
         hoverImage.addEventListener('mouseover', function() {
           audioElement.play();

@@ -20,7 +20,14 @@ function scrollR(x) {
   //PLAY ON HOVER AND AUTOPLAY WHEN IN SCREEN ON MOBILE//
   document.addEventListener('DOMContentLoaded', function() {
     var hoverImages = document.getElementsByClassName('hover-image');
-    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    //var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    // Check if the device has a touchscreen and no mouse
+    const hasTouchScreen = matchMedia("(pointer: coarse)").matches;
+    const hasMouse = matchMedia("(pointer: fine)").matches;
+    var isMobile = (hasTouchScreen && !hasMouse);
+
+   
+
     console.log(isMobile);
     const scrollWindow = document.querySelector('.items-slider');  
     

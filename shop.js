@@ -21,10 +21,12 @@ function scrollR(x) {
   document.addEventListener('DOMContentLoaded', function() {
     var hoverImages = document.getElementsByClassName('hover-image');
     //var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    console.log(isMobile);
+    
+    const mobileDevice = isMobile.any
+    console.log(mobileDevice);
     const scrollWindow = document.querySelector('.items-slider');  
     
-    if (isMobile) {
+    if (mobileDevice) {
       // Create an Intersection Observer instance
       const width = window.innerWidth;
       const rm = 300 - width;

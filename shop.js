@@ -22,7 +22,9 @@ function scrollR(x) {
     var hoverImages = document.getElementsByClassName('hover-image');
     //var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     const width = window.innerWidth;
-    const mobileDevice = (isMobile.any || (width < 900));
+    const height = window.innerHeight;
+    console.log ("Width is " width " and height is " height);
+    const mobileDevice = isMobile.any;
     console.log(mobileDevice);
     const scrollWindow = document.querySelector('.items-slider');  
     

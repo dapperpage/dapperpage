@@ -22,19 +22,13 @@ function scrollR(x) {
     var hoverImages = document.getElementsByClassName('hover-image');
     //var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     const width = window.innerWidth;
-      console.log(width);
     const docWidth = document.documentElement.clientWidth;
-      console.log(docWidth);
     const screenWidth = window.screen.width;
-      console.log(screenWidth);
-
     const mobileDevice = isMobile.any;
-    console.log(mobileDevice);
     const scrollWindow = document.querySelector('.items-slider');  
     
     if (mobileDevice) {
       // Create an Intersection Observer instance
-      const width = window.innerWidth;
       const rm = 300 - screenWidth;
       console.log(rm);
       const options = {

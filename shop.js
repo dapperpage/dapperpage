@@ -23,7 +23,7 @@ function scrollR(x) {
     //var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     const width = window.innerWidth;
     const height = window.innerHeight;
-    console.log("Width is " width " and height is " height);
+    console.log("Width is " (width) " and height is " (height));
     const mobileDevice = isMobile.any;
     console.log(mobileDevice);
     const scrollWindow = document.querySelector('.items-slider');  

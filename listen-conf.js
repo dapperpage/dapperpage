@@ -1,12 +1,12 @@
 //"Listen Now" button function
-const listenNowBtn = document.getElementById("listenButton");
+/*const listenNowBtn = document.getElementById("listenButton");
 
 
 listenNowBtn.addEventListener("click", () => {
 	const firstTrack = document.querySelector(".track");
 	firstTrack.click();
 });
-
+*/
 //.is-current
 //Trumpet Range slider images
 const value = document.getElementById("field");

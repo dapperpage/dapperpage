@@ -30,7 +30,6 @@ function scrollR(x) {
     if (mobileDevice) {
       // Create an Intersection Observer instance
       const rm = 300 - screenWidth;
-      console.log(rm);
       const options = {
               root: null,
               threshold: 0,

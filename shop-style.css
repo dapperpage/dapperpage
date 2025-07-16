@@ -43,9 +43,15 @@
 }
 
 .fa-heart {
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 3px solid #333333;
-  background-color: transparent;
+  width: 3rem;
+  height: 3rem;
+}
+
+.fa-solid .fa-heart .is-favorite {
+  display: block;
+}
+
+.fa-regular .fa-heart .is-favorite {
+  display: none;
 }
 

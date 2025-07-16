@@ -58,7 +58,7 @@ function scrollR(x) {
     } else {
       // Attach event listeners for mouseover and mouseout events
       Array.from(hoverImages).forEach(function(hoverImage) {
-        var audioElement = hoverImage.querySelector('audio');
+        const audioElement = hoverImage.querySelector('audio');
   
         hoverImage.addEventListener('mouseover', function() {
           audioElement.play();
@@ -74,15 +74,15 @@ function scrollR(x) {
   
   //GLOBAL MUTE BUTTON//
   document.addEventListener('DOMContentLoaded', function() {
-        var muteButton = document.getElementById('muteButton');
+        const muteButton = document.getElementById('muteButton');
        
         muteButton.addEventListener('click', toggleMute);
       });
       
       function toggleMute() {
-        var muteButton = document.getElementById('muteButton');
-        var muteIcon = document.getElementById('muteIcon');
-        var unmuteIcon = document.getElementById('unmuteIcon');
+        const muteButton = document.getElementById('muteButton');
+        const muteIcon = document.getElementById('muteIcon');
+        const unmuteIcon = document.getElementById('unmuteIcon');
         
         if (muteButton.classList.contains('muted')) {
           // Unmute the page
@@ -103,7 +103,7 @@ function scrollR(x) {
       
       function mutePage() {
         // Mute all audio elements on the page
-        var audioElements = document.querySelectorAll('audio');
+        const audioElements = document.querySelectorAll('audio');
         
         audioElements.forEach(function(audioElement) {
           audioElement.muted = true;
@@ -112,20 +112,18 @@ function scrollR(x) {
       
       function unmutePage() {
         // Unmute all audio elements on the page
-        var audioElements = document.querySelectorAll('audio');
+        const audioElements = document.querySelectorAll('audio');
         
         audioElements.forEach(function(audioElement) {
           audioElement.muted = false;
         });
       }
       
-      var explore = document.querySelectorAll('.explore');
+      const explore = document.querySelectorAll('.explore');
       //explore.addEventListener ('click', whiteBoy);
   
       
-      function whiteBoy() {
-        console.log('play that funky music');
-        
+      function whiteBoy() {        
         toggleMute();
         toggleMute();
       }

@@ -41,3 +41,11 @@
 	background: #333333;
   border-radius: 100vw;
 }
+
+.fa-heart {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid #333333;
+  background-color: transparent;
+}
+

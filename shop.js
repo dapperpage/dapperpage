@@ -160,4 +160,16 @@ function scrollR(x) {
   } else {
           soundModal.style.display = "flex";
   }
+
+  // Favorite Icon
+  const favIcon = document.querySelectorAll('.favorite');
+  favIcon.forEach((item) => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('is-favorite');
+    });
+  });
+
+  // function toggleFavorite() {
+  //   this.classList.toggle('is-favorite');
+  // }
   

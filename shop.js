@@ -90,14 +90,14 @@ function scrollR(x) {
           muteButton.classList.remove('muted');
           muteIcon.classList.remove('muted');
           unmuteIcon.classList.remove('muted');
-          Cookies.set("autoplay", "true", { expires: 365 });
+          localStorage.setItem("autoplay", "true");
         } else {
           // Mute the page
           mutePage();
           muteButton.classList.add('muted');
           muteIcon.classList.add('muted');
           unmuteIcon.classList.add('muted');
-          Cookies.set("autoplay", "false", { expires: 365 });
+          localStorage.setItem("autoplay", "false");
         }
       }
       
@@ -138,20 +138,20 @@ function scrollR(x) {
       const soundModal = document.querySelector(".sound-on");
       
      soundOn.addEventListener("click", () => {
-         Cookies.set("autoplay", "true", { expires: 365 });
+         localStorage.setItem("autoplay", "true");
      })
      
      soundOff.addEventListener("click", () => {
-         Cookies.set("autoplay", "false", { expires: 365 });
+         localStorage.setItem("autoplay", "false");
      })
      
-      if (Cookies.get("autoplay") == "true") {
+      if (localStorage.getItem("autoplay") == "true") {
      soundModal.style.display = "none";
      unmutePage();
           muteButton.classList.remove('muted');
           muteIcon.classList.remove('muted');
           unmuteIcon.classList.remove('muted');
-  } else if (Cookies.get("autoplay") == "false") {
+  } else if (localStorage.getItem("autoplay") == "false") {
           soundModal.style.display = "none";
       mutePage();
           muteButton.classList.add('muted');
@@ -162,14 +162,5 @@ function scrollR(x) {
   }
 
   // Favorite Icon
-  const favIcon = document.querySelectorAll('.favorite');
-  favIcon.forEach((item) => {
-    item.addEventListener('click', () => {
-      item.classList.toggle('is-favorite');
-    });
-  });
-
-  // function toggleFavorite() {
-  //   this.classList.toggle('is-favorite');
-  // }
-  
+const favIcon = document.querySelectorAll('.favorite');
+console.log(favIcon);

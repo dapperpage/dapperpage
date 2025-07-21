@@ -34,7 +34,6 @@ $('.reset').on('click', function () {
          localStorage.removeItem(storageName);
       }
    });
-   //   localStorage.clear(); // I don't want to clear all the local storage, just the favorites
    //   setTimeout('window.location.href = "https://www.dapperpage.com/conference-interaction/listen-conference"', 3000); //this line is for redirecting after clearing favorites from conference interaction page
 });
 

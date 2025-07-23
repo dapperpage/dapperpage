@@ -1,3 +1,6 @@
+getStorage();
+handleFavButtons();
+
 //Trumpet Range slider images
 const value = document.getElementById("field");
 let rangeImg = document.getElementById("rangeImg");

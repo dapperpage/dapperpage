@@ -40,4 +40,4 @@
 // $("#fav-print").click(function() { window.print(); });
 
 getStorage();
-
+handleFavButtons();

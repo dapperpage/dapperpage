@@ -1,3 +1,6 @@
+getStorage();
+handleFavButtons();
+
 //SCROLL BUTTONS//
 function scrollR(x) {
     var scrollWindow = document.getElementsByClassName("items-slider")[x];

@@ -184,6 +184,8 @@ function handleFavButtons() {
             }
             icon.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b6bd8c41c933269ad27_heart-solid%20(1).svg";
          }
+
+         getStorage(); // Refresh storage to ensure the latest state is reflected
       });
    });
 }

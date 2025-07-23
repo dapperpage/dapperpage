@@ -39,9 +39,11 @@
 
 // Favorite Item Class
 class FavoriteItem {
-   constructor(title, url, price, sku, favorite = false, order = false) {
+   constructor(title, url, composer, arranger,price, sku, favorite = false, order = false) {
       this.title = title;
       this.url = url;
+      this.composer = composer;
+      this.arranger = arranger;
       this.price = price;
       this.sku = sku;
       this.favorite = favorite;
@@ -49,7 +51,7 @@ class FavoriteItem {
    }
 }
 const items = document.querySelectorAll('.item');
-console.log(items);
+console.log(items[0].dataset.title);
 // Get Local Storage
 
 

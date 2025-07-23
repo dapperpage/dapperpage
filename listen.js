@@ -40,7 +40,7 @@ value.addEventListener('input', () => { rangeImg.src = notes[value.value - 72] }
 const favButtons = document.querySelectorAll('.fav-button');
 favButtons.forEach(button => {
 	button.addEventListener('click', function (e) {
-
+		const icon = button.querySelector('img');
 		const item = button.closest('.item');
 		// const title = item.dataset.title;
 		// const url = item.dataset.url;
@@ -56,7 +56,7 @@ favButtons.forEach(button => {
 			removeFromFavorites(item);
 			// item.classList.remove('is-favorite');
 			// localStorage.removeItem(title);
-			button.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b97f7f86dbb71aeef0c_heart-regular%20(1).svg";
+			icon.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b97f7f86dbb71aeef0c_heart-regular%20(1).svg";
 		} else {
 			if (!localStorage.getItem(item.dataset.title)) {
 				populateStorage(item, true);
@@ -65,7 +65,7 @@ favButtons.forEach(button => {
 			}
 			// item.classList.add('is-favorite');
 			// localStorage.setItem(title, JSON.stringify(favoriteItem));
-			button.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b6bd8c41c933269ad27_heart-solid%20(1).svg";
+			icon.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b6bd8c41c933269ad27_heart-solid%20(1).svg";
 		}
 	});
 });

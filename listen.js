@@ -34,3 +34,26 @@ rangeImg.src = "https://uploads-ssl.webflow.com/640788df21cddc9b2f29bc16/645346b
 
 value.addEventListener('input', () => {rangeImg.src = notes[value.value - 72]});
 
+// Handle favorite items
+const favButtons = document.querySelectorAll('.fav-button');
+favButtons.forEach(button => {
+	button.addEventListener('click', () => {
+		const item = button.closest('.item');
+		const title = item.dataset.title;
+		const url = item.dataset.url;
+		const composer = item.dataset.composer;
+		const arranger = item.dataset.arranger;
+		const price = item.dataset.price;
+		const sku = item.dataset.sku;
+
+		let favoriteItem = new FavoriteItem(title, url, composer, arranger, price, sku);
+		
+		if (item.classList.contains('is-favorite')) {
+			item.classList.remove('is-favorite');
+			localStorage.removeItem(title);
+		} else {
+			item.classList.add('is-favorite');
+			localStorage.setItem(title, JSON.stringify(favoriteItem));
+		}
+	});
+});

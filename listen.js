@@ -1,3 +1,5 @@
+getStorage();
+
 //"Listen Now" button function
 const listenNowBtn = document.getElementById("listenButton");
 
@@ -37,7 +39,8 @@ value.addEventListener('input', () => {rangeImg.src = notes[value.value - 72]});
 // Handle favorite items
 const favButtons = document.querySelectorAll('.fav-button');
 favButtons.forEach(button => {
-	button.addEventListener('click', () => {
+	button.addEventListener('click', function(e) {
+		
 		const item = button.closest('.item');
 		const title = item.dataset.title;
 		const url = item.dataset.url;
@@ -51,9 +54,11 @@ favButtons.forEach(button => {
 		if (item.classList.contains('is-favorite')) {
 			item.classList.remove('is-favorite');
 			localStorage.removeItem(title);
+			this.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b97f7f86dbb71aeef0c_heart-regular%20(1).svg";
 		} else {
 			item.classList.add('is-favorite');
 			localStorage.setItem(title, JSON.stringify(favoriteItem));
+			this.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b6bd8c41c933269ad27_heart-solid%20(1).svg";
 		}
 	});
 });

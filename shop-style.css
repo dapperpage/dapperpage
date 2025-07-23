@@ -42,16 +42,6 @@
   border-radius: 100vw;
 }
 
-.fa-heart {
-  width: 3rem;
-  height: 3rem;
-}
 
-.fa-solid .fa-heart .is-favorite {
-  display: block;
-}
 
-.fa-regular .fa-heart .is-favorite {
-  display: none;
-}
 

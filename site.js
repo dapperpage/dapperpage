@@ -50,33 +50,113 @@ class FavoriteItem {
       this.order = order;
    }
 }
-const items = document.querySelectorAll('.item');
-for (let i = 0; i < items.length; i++) {
-   console.log(items[i].dataset.sku);
-}
-// Get Local Storage
 
+// Get Local Storage
+function getStorage() {
+   const items = document.querySelectorAll('.item');
+   items.forEach((item) => {
+      const title = item.dataset.title;
+      if (!localStorage.getItem(title)) {
+         populateStorage(item);
+      } else {
+         const listItem = localStorage.getItem(title);
+         const parsedItem = JSON.parse(listItem);
+         if (parsedItem.favorite) {
+            item.classList.add('is-favorite');
+         }
+         if (parsedItem.order) {
+            item.classList.add('is-order');
+         }
+      }
+   });
+}
 
 // Set Local Storage
-function setStorage() {}
+function setStorage(storageItem, key, value) {
+   const data = localStorage.getItem(storageItem.dataset.title);
+   const parsedData = JSON.parse(data);
+   parsedData[key] = value;
+   const newData = JSON.stringify(parsedData);
+   localStorage.setItem(storageItem.dataset.title, newData);
+}
 
 // Populate Local Storage
+function populateStorage(storageItem, favorite = false) {
+   const obj = new FavoriteItem(
+      storageItem.dataset.title,
+      storageItem.dataset.url,
+      storageItem.dataset.composer,
+      storageItem.dataset.arranger,
+      storageItem.dataset.price,
+      storageItem.dataset.sku,
+      favorite
+   );
+   const objString = JSON.stringify(obj);
+   localStorage.setItem(storageItem.dataset.title, objString);
+}
 
 
 // Add to Favorites
+function addToFavorites(storageItem) {
+   const listItem = localStorage.getItem(storageItem.dataset.title);
+   const parsedItem = JSON.parse(listItem);
+   parsedItem.favorite = true;
+   const newItem = JSON.stringify(parsedItem);
+   localStorage.setItem(storageItem.dataset.title, newItem);
+   storageItem.classList.add('is-favorite');
+}
 
 
 // Remove from Favorites
+function removeFromFavorites(storageItem) {
+   const listItem = localStorage.getItem(storageItem.dataset.title);
+   const parsedItem = JSON.parse(listItem);
+   parsedItem.favorite = false;
+   const newItem = JSON.stringify(parsedItem);
+   localStorage.setItem(storageItem.dataset.title, newItem);
+   storageItem.classList.remove('is-favorite');
+}
 
 
 // Clear Favorites
+function clearFavorites() {
+   items.forEach((item) => {
+      const title = item.dataset.title;
+      if (localStorage.getItem(title)) {
+         removeFromFavorites(item);
+      }
+   });
+}
 
 
 // Add to Order
+function addToOrder(storageItem) {
+   const listItem = localStorage.getItem(storageItem.dataset.title);
+   const parsedItem = JSON.parse(listItem);
+   parsedItem.order = true;
+   const newItem = JSON.stringify(parsedItem);
+   localStorage.setItem(storageItem.dataset.title, newItem);
+   storageItem.classList.add('is-order');
+}
 
 
 // Remove from Order
+function removeFromOrder(storageItem) {
+   const listItem = localStorage.getItem(storageItem.dataset.title);
+   const parsedItem = JSON.parse(listItem);
+   parsedItem.order = false;
+   const newItem = JSON.stringify(parsedItem);
+   localStorage.setItem(storageItem.dataset.title, newItem);
+   storageItem.classList.remove('is-order');
+}
 
 
 // Clear Order
-
+function clearOrder() {
+   items.forEach((item) => {
+      const title = item.dataset.title;
+      if (localStorage.getItem(title)) {
+         removeFromOrder(item);
+      }
+   });
+}

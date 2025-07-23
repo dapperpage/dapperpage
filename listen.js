@@ -56,17 +56,16 @@ favButtons.forEach(button => {
 			removeFromFavorites(item);
 			// item.classList.remove('is-favorite');
 			// localStorage.removeItem(title);
-			this.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b97f7f86dbb71aeef0c_heart-regular%20(1).svg";
+			button.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b97f7f86dbb71aeef0c_heart-regular%20(1).svg";
 		} else {
 			if (!localStorage.getItem(item.dataset.title)) {
 				populateStorage(item, true);
 			} else {
-
 				addToFavorites(item);
 			}
 			// item.classList.add('is-favorite');
 			// localStorage.setItem(title, JSON.stringify(favoriteItem));
-			this.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b6bd8c41c933269ad27_heart-solid%20(1).svg";
+			button.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b6bd8c41c933269ad27_heart-solid%20(1).svg";
 		}
 	});
 });

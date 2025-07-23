@@ -39,7 +39,7 @@
 
 // Favorite Item Class
 class FavoriteItem {
-   constructor(title, url, composer, arranger,price, sku, favorite = false, order = false) {
+   constructor(title, url, composer, arranger, price, sku, favorite = false, order = false) {
       this.title = title;
       this.url = url;
       this.composer = composer;
@@ -161,5 +161,29 @@ function clearOrder() {
       if (localStorage.getItem(title)) {
          removeFromOrder(item);
       }
+   });
+}
+
+
+//Handle fav buttons
+function handleFavButtons() {
+   const favButtons = document.querySelectorAll('.fav-button');
+   favButtons.forEach(button => {
+      button.addEventListener('click', function (e) {
+         const icon = button.querySelector('img');
+         const item = button.closest('.item');
+
+         if (item.classList.contains('is-favorite')) {
+            removeFromFavorites(item);
+            icon.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b97f7f86dbb71aeef0c_heart-regular%20(1).svg";
+         } else {
+            if (!localStorage.getItem(item.dataset.title)) {
+               populateStorage(item, true);
+            } else {
+               addToFavorites(item);
+            }
+            icon.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b6bd8c41c933269ad27_heart-solid%20(1).svg";
+         }
+      });
    });
 }

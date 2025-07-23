@@ -59,15 +59,16 @@ function getStorage() {
       const favButton = item.querySelector('.fav-button');
       const favIcon = favButton.querySelector('img');
       let parsedItem;
+      try {
+         const listItem = localStorage.getItem(title);
+         parsedItem = JSON.parse(listItem);
+      } catch (error) {
+         localStorage.removeItem(title);
+      }
       if (!localStorage.getItem(title)) {
          populateStorage(item);
       } else {
-         try {
-            const listItem = localStorage.getItem(title);
-            parsedItem = JSON.parse(listItem);
-         } catch (error) {
-            localStorage.removeItem(title);
-         }
+
          if (parsedItem.favorite) {
             item.classList.add('is-favorite');
             favIcon.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b6bd8c41c933269ad27_heart-solid%20(1).svg";

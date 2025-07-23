@@ -2,10 +2,6 @@
 	display: block;
 }
 
-.track-item.is-favorite .favorite {
-	background-image: url("https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/676dde4c5776395c580f2677_star_24dp_B89230_FILL1_wght400_GRAD0_opsz24.webp");
-}
-
 .favorites .track-item {
 	display: none;
 }

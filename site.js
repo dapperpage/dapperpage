@@ -56,6 +56,8 @@ function getStorage() {
    const items = document.querySelectorAll('.item');
    items.forEach((item) => {
       const title = item.dataset.title;
+      const favButton = item.querySelector('.fav-button');
+      const favIcon = favButton.querySelector('img');
       if (!localStorage.getItem(title)) {
          populateStorage(item);
       } else {
@@ -63,6 +65,7 @@ function getStorage() {
          const parsedItem = JSON.parse(listItem);
          if (parsedItem.favorite) {
             item.classList.add('is-favorite');
+            favIcon.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b6bd8c41c933269ad27_heart-solid%20(1).svg";
          }
          if (parsedItem.order) {
             item.classList.add('is-order');

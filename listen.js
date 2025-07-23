@@ -42,20 +42,9 @@ favButtons.forEach(button => {
 	button.addEventListener('click', function (e) {
 		const icon = button.querySelector('img');
 		const item = button.closest('.item');
-		// const title = item.dataset.title;
-		// const url = item.dataset.url;
-		// const composer = item.dataset.composer;
-		// const arranger = item.dataset.arranger;
-		// const price = item.dataset.price;
-		// const sku = item.dataset.sku;
-
-		// let favoriteItem = new FavoriteItem(title, url, composer, arranger, price, sku, true, false);
-
 
 		if (item.classList.contains('is-favorite')) {
 			removeFromFavorites(item);
-			// item.classList.remove('is-favorite');
-			// localStorage.removeItem(title);
 			icon.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b97f7f86dbb71aeef0c_heart-regular%20(1).svg";
 		} else {
 			if (!localStorage.getItem(item.dataset.title)) {
@@ -63,8 +52,6 @@ favButtons.forEach(button => {
 			} else {
 				addToFavorites(item);
 			}
-			// item.classList.add('is-favorite');
-			// localStorage.setItem(title, JSON.stringify(favoriteItem));
 			icon.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b6bd8c41c933269ad27_heart-solid%20(1).svg";
 		}
 	});

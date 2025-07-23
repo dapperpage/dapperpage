@@ -51,7 +51,9 @@ class FavoriteItem {
    }
 }
 const items = document.querySelectorAll('.item');
-console.log(items[0].dataset.title);
+for (let i = 0; i < items.length; i++) {
+   console.log(items[i].dataset.sku);
+}
 // Get Local Storage
 
 

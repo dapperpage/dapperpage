@@ -1,5 +1,6 @@
 getStorage();
 handleFavButtons();
+handleOrderButtons();
 
 //"Listen Now" button function
 const listenNowBtn = document.getElementById("listenButton");

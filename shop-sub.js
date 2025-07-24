@@ -1,5 +1,6 @@
 getStorage();
 handleFavButtons();
+handleOrderButtons();
 
 //Trumpet Range slider images
 const value = document.getElementById("field");

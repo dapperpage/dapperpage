@@ -1,5 +1,6 @@
 getStorage();
 handleFavButtons();
+handleOrderButtons();
 
 //SCROLL BUTTONS//
 function scrollR(x) {
@@ -164,6 +165,3 @@ function scrollR(x) {
           soundModal.style.display = "flex";
   }
 
-  // Favorite Icon
-const favIcon = document.querySelectorAll('.favorite');
-console.log(favIcon);

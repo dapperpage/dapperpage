@@ -14,17 +14,20 @@ class FavoriteItem {
 
 // Icons for favorites and delete
 const heartIconNoFill = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b97f7f86dbb71aeef0c_heart-regular%20(1).svg";
-const heartIconFill = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b6bd8c41c933269ad27_heart-solid%20(1).svg";
+const heartIconFill = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68824556b50df7378d1d4a80_heart-solid-full.svg";
 const trashIcon = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68816bd4316039697c5cf107_trash-solid-full.svg";
+const listIconLight = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/688248578addfae1971158bc_table-list-solid-full%20(1).svg";
+const listIcontDark = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/6882455b26174fa6bb8b9d08_table-list-solid-full.svg";
 
 
 // Get Local Storage
-function getStorage(favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill) {
+function getStorage(favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill, orderIconSrc = listIcontDark, noOrderIconSrc = listIconLight) {
    const items = document.querySelectorAll('.item');
    items.forEach((item) => {
       const title = item.dataset.title;
-      const favButton = item.querySelector('.fav-button');
-      const favIcon = favButton.querySelector('img');
+      //const favButton = item.querySelector('.fav-button');
+      const favIcon = item.querySelector('.heart-icon');
+      const orderIcon = item.querySelector('.order-icon');
       let parsedItem;
       try {
          const listItem = localStorage.getItem(title);
@@ -45,6 +48,10 @@ function getStorage(favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill) 
          }
          if (parsedItem.order) {
             item.classList.add('is-order');
+            orderIcon.src = orderIconSrc;
+         } else if (!parsedItem.order) {
+            item.classList.remove('is-order');
+            orderIcon.src = noOrderIconSrc;
          }
       }
    });
@@ -60,7 +67,7 @@ function setStorage(storageItem, key, value) {
 }
 
 // Populate Local Storage
-function populateStorage(storageItem, favorite = false) {
+function populateStorage(storageItem, favorite = false, order = false) {
    const obj = new FavoriteItem(
       storageItem.dataset.title,
       storageItem.dataset.url,
@@ -68,7 +75,8 @@ function populateStorage(storageItem, favorite = false) {
       storageItem.dataset.arranger,
       storageItem.dataset.price,
       storageItem.dataset.sku,
-      favorite
+      favorite,
+      order
    );
    const objString = JSON.stringify(obj);
    localStorage.setItem(storageItem.dataset.title, objString);
@@ -161,6 +169,31 @@ function handleFavButtons(favIconSrc = heartIconFill, unfavIconSrc = heartIconNo
          }
 
          getStorage(favIconSrc, unfavIconSrc); // Refresh storage to ensure the latest state is reflected
+      });
+   });
+}
+
+//Handle order buttons
+function handleOrderButtons(orderIconSrc = listIcontDark, noOrderIconSrc = listIconLight) {
+   const orderButtons = document.querySelectorAll('.order-button');
+   orderButtons.forEach(button => {
+      button.addEventListener('click', function (e) {
+         const icon = button.querySelector('img');
+         const item = button.closest('.item');
+
+         if (item.classList.contains('is-order')) {
+            removeFromOrder(item);
+            icon.src = noOrderIconSrc;
+         } else {
+            if (!localStorage.getItem(item.dataset.title)) {
+               populateStorage(item, false, true);
+            } else {
+               addToOrder(item);
+            }
+            icon.src = orderIconSrc;
+         }
+
+         getStorage(undefined, undefined, orderIconSrc, noOrderIconSrc); // Refresh storage to ensure the latest state is reflected
       });
    });
 }

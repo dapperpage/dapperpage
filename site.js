@@ -12,8 +12,14 @@ class FavoriteItem {
    }
 }
 
+// Icons for favorites and delete
+const heartIconNoFill = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b97f7f86dbb71aeef0c_heart-regular%20(1).svg";
+const heartIconFill = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b6bd8c41c933269ad27_heart-solid%20(1).svg";
+const trashIcon = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68816bd4316039697c5cf107_trash-solid-full.svg";
+
+
 // Get Local Storage
-function getStorage() {
+function getStorage(favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill) {
    const items = document.querySelectorAll('.item');
    items.forEach((item) => {
       const title = item.dataset.title;
@@ -32,10 +38,10 @@ function getStorage() {
 
          if (parsedItem.favorite) {
             item.classList.add('is-favorite');
-            favIcon.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b6bd8c41c933269ad27_heart-solid%20(1).svg";
+            favIcon.src = favIconSrc;
          } else if (!parsedItem.favorite) {
             item.classList.remove('is-favorite');
-            favIcon.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b97f7f86dbb71aeef0c_heart-regular%20(1).svg";
+            favIcon.src = unfavIconSrc;
          }
          if (parsedItem.order) {
             item.classList.add('is-order');
@@ -134,9 +140,8 @@ function clearOrder() {
    });
 }
 
-
 //Handle fav buttons
-function handleFavButtons() {
+function handleFavButtons(favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill) {
    const favButtons = document.querySelectorAll('.fav-button');
    favButtons.forEach(button => {
       button.addEventListener('click', function (e) {
@@ -145,14 +150,14 @@ function handleFavButtons() {
 
          if (item.classList.contains('is-favorite')) {
             removeFromFavorites(item);
-            icon.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b97f7f86dbb71aeef0c_heart-regular%20(1).svg";
+            icon.src = unfavIconSrc;
          } else {
             if (!localStorage.getItem(item.dataset.title)) {
                populateStorage(item, true);
             } else {
                addToFavorites(item);
             }
-            icon.src = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/68783b6bd8c41c933269ad27_heart-solid%20(1).svg";
+            icon.src = favIconSrc;
          }
 
          getStorage(); // Refresh storage to ensure the latest state is reflected

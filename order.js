@@ -1,6 +1,6 @@
-getStorage(undefined, undefined, trashIcon, listIconLight);
+getStorage({orderIconSrc: trashIcon, noOrderIconSrc: listIconLight});
 handleFavButtons();
-handleOrderButtons(trashIcon, listIconLight);
+handleOrderButtons({orderIconSrc: trashIcon, noOrderIconSrc: listIconLight});
 
 // Print Order
 const printOrderBtn = document.getElementById("printOrder");

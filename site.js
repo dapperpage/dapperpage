@@ -21,7 +21,7 @@ const listIcontDark = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc
 
 
 // Get Local Storage
-function getStorage(favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill, orderIconSrc = listIcontDark, noOrderIconSrc = listIconLight) {
+function getStorage({favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill, orderIconSrc = listIcontDark, noOrderIconSrc = listIconLight} = {}) {
    const items = document.querySelectorAll('.item');
    items.forEach((item) => {
       const title = item.dataset.title;
@@ -149,7 +149,7 @@ function clearOrder() {
 }
 
 //Handle fav buttons
-function handleFavButtons(favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill) {
+function handleFavButtons({favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill} = {}) {
    const favButtons = document.querySelectorAll('.fav-button');
    favButtons.forEach(button => {
       button.addEventListener('click', function (e) {
@@ -168,13 +168,13 @@ function handleFavButtons(favIconSrc = heartIconFill, unfavIconSrc = heartIconNo
             icon.src = favIconSrc;
          }
 
-         getStorage(favIconSrc, unfavIconSrc); // Refresh storage to ensure the latest state is reflected
+         getStorage({favIconSrc: favIconSrc, unfavIconSrc: unfavIconSrc}); // Refresh storage to ensure the latest state is reflected
       });
    });
 }
 
 //Handle order buttons
-function handleOrderButtons(orderIconSrc = listIcontDark, noOrderIconSrc = listIconLight) {
+function handleOrderButtons({orderIconSrc = listIcontDark, noOrderIconSrc = listIconLight} = {}) {
    const orderButtons = document.querySelectorAll('.order-button');
    orderButtons.forEach(button => {
       button.addEventListener('click', function (e) {
@@ -193,7 +193,7 @@ function handleOrderButtons(orderIconSrc = listIcontDark, noOrderIconSrc = listI
             icon.src = orderIconSrc;
          }
 
-         getStorage(undefined, undefined, orderIconSrc, noOrderIconSrc); // Refresh storage to ensure the latest state is reflected
+         getStorage({orderIconSrc: orderIconSrc, noOrderIconSrc: noOrderIconSrc}); // Refresh storage to ensure the latest state is reflected
       });
    });
 }

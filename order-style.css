@@ -10,4 +10,10 @@
   .sidebar, .footer, .nav-bar, .no-print { 
     display: none;
   }
+
+  .print-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

@@ -1,5 +1,5 @@
 getStorage({orderIconSrc: trashIcon, noOrderIconSrc: listIconLight});
-handleFavButtons();
+handleFavButtons({orderIconSrc: trashIcon, noOrderIconSrc: listIconLight});
 handleOrderButtons({orderIconSrc: trashIcon, noOrderIconSrc: listIconLight});
 
 // Print Order

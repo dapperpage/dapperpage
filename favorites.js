@@ -1,3 +1,3 @@
 getStorage({favIconSrc: trashIcon, unfavIconSrc: heartIconNoFill});
 handleFavButtons({favIconSrc: trashIcon, unfavIconSrc: heartIconNoFill});
-handleOrderButtons();
+handleOrderButtons({favIconSrc: trashIcon, unfavIconSrc: heartIconNoFill});

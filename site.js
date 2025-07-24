@@ -149,7 +149,7 @@ function clearOrder() {
 }
 
 //Handle fav buttons
-function handleFavButtons({favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill} = {}) {
+function handleFavButtons({favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill, orderIconSrc = listIcontDark, noOrderIconSrc = listIconLight} = {}) {
    const favButtons = document.querySelectorAll('.fav-button');
    favButtons.forEach(button => {
       button.addEventListener('click', function (e) {
@@ -168,13 +168,13 @@ function handleFavButtons({favIconSrc = heartIconFill, unfavIconSrc = heartIconN
             icon.src = favIconSrc;
          }
 
-         getStorage({favIconSrc: favIconSrc, unfavIconSrc: unfavIconSrc}); // Refresh storage to ensure the latest state is reflected
+         getStorage({favIconSrc: favIconSrc, unfavIconSrc: unfavIconSrc, orderIconSrc: orderIconSrc, noOrderIconSrc: noOrderIconSrc}); // Refresh storage to ensure the latest state is reflected
       });
    });
 }
 
 //Handle order buttons
-function handleOrderButtons({orderIconSrc = listIcontDark, noOrderIconSrc = listIconLight} = {}) {
+function handleOrderButtons({favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill, orderIconSrc = listIcontDark, noOrderIconSrc = listIconLight} = {}) {
    const orderButtons = document.querySelectorAll('.order-button');
    orderButtons.forEach(button => {
       button.addEventListener('click', function (e) {
@@ -193,7 +193,7 @@ function handleOrderButtons({orderIconSrc = listIcontDark, noOrderIconSrc = list
             icon.src = orderIconSrc;
          }
 
-         getStorage({orderIconSrc: orderIconSrc, noOrderIconSrc: noOrderIconSrc}); // Refresh storage to ensure the latest state is reflected
+         getStorage({favIconSrc: favIconSrc, unfavIconSrc: unfavIconSrc, orderIconSrc: orderIconSrc, noOrderIconSrc: noOrderIconSrc}); // Refresh storage to ensure the latest state is reflected
       });
    });
 }

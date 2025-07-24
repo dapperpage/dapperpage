@@ -1,0 +1,13 @@
+.favorites .track-item.is-order {
+	display: block;
+}
+
+.favorites .track-item {
+	display: none;
+}
+
+@media print{
+  .sidebar, .footer, .nav-bar, .no-print { 
+    display: none;
+  }
+}

@@ -160,7 +160,7 @@ function handleFavButtons(favIconSrc = heartIconFill, unfavIconSrc = heartIconNo
             icon.src = favIconSrc;
          }
 
-         getStorage(); // Refresh storage to ensure the latest state is reflected
+         getStorage(favIconSrc, unfavIconSrc); // Refresh storage to ensure the latest state is reflected
       });
    });
 }

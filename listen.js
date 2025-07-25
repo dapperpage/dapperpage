@@ -50,3 +50,11 @@ value.addEventListener('input', () => { rangeImg.src = notes[value.value - 72] }
 // 		icon.src = playIcon;
 // 	}
 // });
+
+// Stop popagation for links inside track items
+const trackItems = document.querySelectorAll('.item-button-menu-icon, .overlay, .track-thumbnail, .track-title, .track-composer');
+trackItems.forEach((item) => {
+	item.addEventListener('click', (event) => {
+		event.stopPropagation();
+	});
+});

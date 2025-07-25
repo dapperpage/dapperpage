@@ -153,6 +153,7 @@ function handleFavButtons({favIconSrc = heartIconFill, unfavIconSrc = heartIconN
    const favButtons = document.querySelectorAll('.fav-button');
    favButtons.forEach(button => {
       button.addEventListener('click', function (e) {
+         e.stopPropagation();
          const icon = button.querySelector('img');
          const item = button.closest('.item');
 
@@ -178,6 +179,7 @@ function handleOrderButtons({favIconSrc = heartIconFill, unfavIconSrc = heartIco
    const orderButtons = document.querySelectorAll('.order-button');
    orderButtons.forEach(button => {
       button.addEventListener('click', function (e) {
+         e.stopPropagation();
          const icon = button.querySelector('img');
          const item = button.closest('.item');
 

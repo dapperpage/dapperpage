@@ -1,6 +1,7 @@
 getStorage();
 handleFavButtons();
 handleOrderButtons();
+animateDropdown();
 
 //"Listen Now" button function
 const listenNowBtn = document.getElementById("listenButton");
@@ -38,23 +39,4 @@ rangeImg.src = "https://uploads-ssl.webflow.com/640788df21cddc9b2f29bc16/645346b
 
 value.addEventListener('input', () => { rangeImg.src = notes[value.value - 72] });
 
-// // Add play button icon to list items
-// const playIcon = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/676de1a1e37010917322f40c_play.webp";
-// const playBars = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/6448ca9d5ccca43826edb6e6_audio%20active%20black.svg";
-// const playingIcons = document.querySelectorAll('.mp-audio-bar');
 
-// playingIcons.forEach((icon) => {
-// 	if (icon.classList.contains('is-playing')) {
-// 		icon.src = playBars;
-// 	} else {
-// 		icon.src = playIcon;
-// 	}
-// });
-
-// Stop popagation for links inside track items
-const trackItems = document.querySelectorAll('.item-button-menu-icon, .overlay, .track-thumbnail, .track-title, .track-composer');
-trackItems.forEach((item) => {
-	item.addEventListener('click', (event) => {
-		event.stopPropagation();
-	});
-});

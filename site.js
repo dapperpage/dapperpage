@@ -21,7 +21,7 @@ const listIcontDark = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc
 
 
 // Get Local Storage
-function getStorage({favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill, orderIconSrc = listIcontDark, noOrderIconSrc = listIconLight} = {}) {
+function getStorage({ favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill, orderIconSrc = listIcontDark, noOrderIconSrc = listIconLight } = {}) {
    const items = document.querySelectorAll('.item');
    items.forEach((item) => {
       const title = item.dataset.title;
@@ -149,7 +149,7 @@ function clearOrder() {
 }
 
 //Handle fav buttons
-function handleFavButtons({favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill, orderIconSrc = listIcontDark, noOrderIconSrc = listIconLight} = {}) {
+function handleFavButtons({ favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill, orderIconSrc = listIcontDark, noOrderIconSrc = listIconLight } = {}) {
    const favButtons = document.querySelectorAll('.fav-button');
    favButtons.forEach(button => {
       button.addEventListener('click', function (e) {
@@ -169,13 +169,13 @@ function handleFavButtons({favIconSrc = heartIconFill, unfavIconSrc = heartIconN
             icon.src = favIconSrc;
          }
 
-         getStorage({favIconSrc: favIconSrc, unfavIconSrc: unfavIconSrc, orderIconSrc: orderIconSrc, noOrderIconSrc: noOrderIconSrc}); // Refresh storage to ensure the latest state is reflected
+         getStorage({ favIconSrc: favIconSrc, unfavIconSrc: unfavIconSrc, orderIconSrc: orderIconSrc, noOrderIconSrc: noOrderIconSrc }); // Refresh storage to ensure the latest state is reflected
       });
    });
 }
 
 //Handle order buttons
-function handleOrderButtons({favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill, orderIconSrc = listIcontDark, noOrderIconSrc = listIconLight} = {}) {
+function handleOrderButtons({ favIconSrc = heartIconFill, unfavIconSrc = heartIconNoFill, orderIconSrc = listIcontDark, noOrderIconSrc = listIconLight } = {}) {
    const orderButtons = document.querySelectorAll('.order-button');
    orderButtons.forEach(button => {
       button.addEventListener('click', function (e) {
@@ -195,7 +195,34 @@ function handleOrderButtons({favIconSrc = heartIconFill, unfavIconSrc = heartIco
             icon.src = orderIconSrc;
          }
 
-         getStorage({favIconSrc: favIconSrc, unfavIconSrc: unfavIconSrc, orderIconSrc: orderIconSrc, noOrderIconSrc: noOrderIconSrc}); // Refresh storage to ensure the latest state is reflected
+         getStorage({ favIconSrc: favIconSrc, unfavIconSrc: unfavIconSrc, orderIconSrc: orderIconSrc, noOrderIconSrc: noOrderIconSrc }); // Refresh storage to ensure the latest state is reflected
+      });
+   });
+}
+
+// Animate CTA dropdown menu
+function animateDropdown() {
+   const menus = document.querySelectorAll(".item-button-menu-wrapper");
+
+   menus.forEach((menu) => {
+      const menuIcon = menu.querySelector(".item-button-menu-icon");
+      const menuContent = menu.querySelector(".item-button-container");
+      const overlay = menu.querySelector(".overlay");
+
+      menuIcon.addEventListener("click", (e) => {
+         e.stopPropagation();
+         menuContent.classList.toggle("animation");
+         overlay.classList.toggle("block");
+      });
+
+      overlay.addEventListener("click", (e) => {
+         e.stopPropagation();
+         menuContent.classList.remove("animation");
+         overlay.classList.remove("block");
+      });
+
+      menuContent.addEventListener("click", (e) => {
+         e.stopPropagation();
       });
    });
 }

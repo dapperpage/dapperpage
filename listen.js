@@ -37,3 +37,16 @@ const notes = ["https://uploads-ssl.webflow.com/640788df21cddc9b2f29bc16/645346b
 rangeImg.src = "https://uploads-ssl.webflow.com/640788df21cddc9b2f29bc16/645346bea087c6193b25c72f_89-G.png"
 
 value.addEventListener('input', () => { rangeImg.src = notes[value.value - 72] });
+
+// Add play button icon to list items
+const playIcon = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/676de1a1e37010917322f40c_play.webp";
+const playBars = "https://cdn.prod.website-files.com/640788df21cddc9b2f29bc16/6448ca9d5ccca43826edb6e6_audio%20active%20black.svg";
+const playingIcons = document.querySelectorAll('.mp-audio-bar');
+
+playingIcons.forEach((icon) => {
+	if (icon.classList.contains('is-playing')) {
+		icon.src = playBars;
+	} else {
+		icon.src = playIcon;
+	}
+});

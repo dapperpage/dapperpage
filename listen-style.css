@@ -6,6 +6,6 @@
   -webkit-box-orient: vertical;
 }
 
-.track-item.selected .saved {
-	background-color: goldenrod;
+.mp-audio-bar.is-playing + .play-icon {
+  display: none;
 }

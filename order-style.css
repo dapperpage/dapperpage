@@ -7,6 +7,11 @@
 }
 
 @media print{
+    @page {
+        margin: 1in;
+        size: letter;
+    }
+
   .sidebar, .footer, .nav-bar, .no-print { 
     display: none;
   }

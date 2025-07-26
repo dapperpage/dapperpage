@@ -8,8 +8,7 @@
 
 @media print{
     @page {
-        margin: 1in;
-        size: letter;
+        margin-top: 1in;
     }
 
   .sidebar, .footer, .nav-bar, .no-print { 

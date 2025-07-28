@@ -1,3 +1,6 @@
+const activeFilters = document.querySelectorAll('.fs-cmsfilter_active');
+const filterTags = document.querySelectorAll('.active-tags');
+
 getStorage();
 handleFavButtons();
 handleOrderButtons();
@@ -42,13 +45,13 @@ rangeImg.src = "https://uploads-ssl.webflow.com/640788df21cddc9b2f29bc16/645346b
 value.addEventListener('input', () => { rangeImg.src = notes[value.value - 72] });
 
 // hide the trumpet range tag
-const filterTags = document.querySelectorAll('.active-tags');
+
 function hideTrumpetRangeTag() {
 	filterTags[0].style.display = 'none'; // Hide the first tag which is the trumpet range
 }
 
 // reselect the active filters to show the correct tags
-const activeFilters = document.querySelectorAll('.fs-cmsfilter_active');
+
 
 function reselectActiveFilters() {
   activeFilters.forEach((filter) => {

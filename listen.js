@@ -39,4 +39,6 @@ rangeImg.src = "https://uploads-ssl.webflow.com/640788df21cddc9b2f29bc16/645346b
 
 value.addEventListener('input', () => { rangeImg.src = notes[value.value - 72] });
 
-
+// hide the trumpet range tag
+const filterTags = document.querySelectorAll('.active-tags');
+filterTags[0].style.display = 'none'; // Hide the first tag which is the trumpet range

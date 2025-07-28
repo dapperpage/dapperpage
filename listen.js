@@ -3,6 +3,7 @@ handleFavButtons();
 handleOrderButtons();
 animateDropdown();
 reselectActiveFilters();
+hideTrumpetRangeTag();
 
 //"Listen Now" button function
 const listenNowBtn = document.getElementById("listenButton");
@@ -42,7 +43,9 @@ value.addEventListener('input', () => { rangeImg.src = notes[value.value - 72] }
 
 // hide the trumpet range tag
 const filterTags = document.querySelectorAll('.active-tags');
-filterTags[0].style.display = 'none'; // Hide the first tag which is the trumpet range
+function hideTrumpetRangeTag() {
+	filterTags[0].style.display = 'none'; // Hide the first tag which is the trumpet range
+}
 
 // reselect the active filters to show the correct tags
 const activeFilters = document.querySelectorAll('.fs-cmsfilter_active');

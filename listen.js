@@ -50,7 +50,9 @@ function hideTrumpetRangeTag() {
 	}
 }
 
-hideTrumpetRangeTag();
+window.addEventListener("load", function(event) {
+	hideTrumpetRangeTag();
+});
 
 
 

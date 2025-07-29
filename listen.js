@@ -1,12 +1,7 @@
-const activeFilters = document.querySelectorAll('.fs-cmsfilter_active');
-const filterTags = document.querySelectorAll('.active-tags');
-
 getStorage();
 handleFavButtons();
 handleOrderButtons();
 animateDropdown();
-reselectActiveFilters();
-hideTrumpetRangeTag();
 
 //"Listen Now" button function
 const listenNowBtn = document.getElementById("listenButton");
@@ -45,18 +40,17 @@ rangeImg.src = "https://uploads-ssl.webflow.com/640788df21cddc9b2f29bc16/645346b
 value.addEventListener('input', () => { rangeImg.src = notes[value.value - 72] });
 
 // hide the trumpet range tag
-
+const filterTags = document.querySelectorAll('.active-tags');
 function hideTrumpetRangeTag() {
-	filterTags[0].style.display = 'none'; // Hide the first tag which is the trumpet range
+	for (let i = 0; i < filterTags.length; i++) {
+		const tag = filterTags[i].querySelector('.tag-text');
+		if (tag.innerHTML.includes("[")) {
+			filterTags[i].style.display = "none";
+		}
+	}
 }
 
-// reselect the active filters to show the correct tags
+hideTrumpetRangeTag();
 
 
-function reselectActiveFilters() {
-  activeFilters.forEach((filter) => {
-	filter.classList.remove('fs-cmsfilter_active');
-	filter.classList.add('fs-cmsfilter_active');
-  });
-}
 

@@ -50,16 +50,17 @@ value.addEventListener('input', () => { rangeImg.src = notes[value.value - 72] }
 // 	}
 // }
 
-const tagTexts = document.querySelectorAll('.tag-text');
-function hideTrumpetRangeTag() {
-	for (tag of tagTexts) {
-		if (tag.innerHTML.includes("--")) {
-			tag.parentElement.style.display = "none"; // Hide the parent element of the tag
-		}
-	}
-}
 
 window.addEventListener("load", function(event) {
+	const tagTexts = document.querySelectorAll('.tag-text');
+	function hideTrumpetRangeTag() {
+		for (tag of tagTexts) {
+			console.log(tag.innerHTML);
+			if (tag.innerHTML.includes("--")) {
+				tag.parentElement.style.display = "none"; // Hide the parent element of the tag
+			}
+		}
+	}
 	hideTrumpetRangeTag();
 });
 

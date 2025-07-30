@@ -5,10 +5,18 @@ animateDropdown();
 
 // Clear all favorites
 const clearFavsBtn = document.getElementById("clearFavs");
-const favs = document.querySelectorAll('.is-favorite');
-clearFavsBtn.addEventListener("click", () => {clearFavorites();});
-if (favs.length === 0) {
-    clearFavsBtn.style.display = "none";
-} else {
-    clearFavsBtn.style.display = "block";
+function handleClearFavorites() {
+    clearFavsBtn.addEventListener("click", () => {clearFavorites();});
+    displayClearFavoritesButton();
 }
+
+function displayClearFavoritesButton() {
+    const favorites = document.querySelectorAll('.is-favorite');
+    if (favorites.length === 0) {
+        clearFavsBtn.style.display = "none";
+    } else {
+        clearFavsBtn.style.display = "block";
+    }
+}
+
+handleClearFavorites();

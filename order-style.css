@@ -1,9 +1,9 @@
-.purchase-order .track-item.is-order {
+.purchase-order .order-item.is-order {
 	display: block;
   position: relative;
 }
 
-.purchase-order .track-item {
+.purchase-order .order-item {
 	display: none;
 }
 

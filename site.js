@@ -107,6 +107,7 @@ function removeFromFavorites(storageItem) {
 
 // Clear Favorites
 function clearFavorites() {
+   const items = document.querySelectorAll('.item');
    items.forEach((item) => {
       const title = item.dataset.title;
       if (localStorage.getItem(title)) {

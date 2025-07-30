@@ -1,8 +1,9 @@
-.favorites .track-item.is-order {
+.purchase-order .track-item.is-order {
 	display: block;
+  position: relative;
 }
 
-.favorites .track-item {
+.purchase-order .track-item {
 	display: none;
 }
 

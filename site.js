@@ -141,6 +141,7 @@ function removeFromOrder(storageItem) {
 
 // Clear Order
 function clearOrder() {
+   const items = document.querySelectorAll('.item');
    items.forEach((item) => {
       const title = item.dataset.title;
       if (localStorage.getItem(title)) {

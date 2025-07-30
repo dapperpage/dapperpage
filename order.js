@@ -32,10 +32,18 @@ printOrderBtn.addEventListener("click", () => {
 
 // Clear all orders
 const clearOrdersBtn = document.getElementById("clearPO");
-const orders = document.querySelectorAll('.is-order');
-clearOrdersBtn.addEventListener("click", () => {clearOrders();});
-if (orders.length === 0) {
-    clearOrdersBtn.style.display = "none";
-} else {
-    clearOrdersBtn.style.display = "block";
+function handleClearOrders() {
+    clearOrdersBtn.addEventListener("click", () => {clearOrders();});
+    displayClearOrdersButton();
 }
+
+function displayClearOrdersButton() {
+    const orders = document.querySelectorAll('.is-order');
+    if (orders.length === 0) {
+        clearOrdersBtn.style.display = "none";
+    } else {
+        clearOrdersBtn.style.display = "block";
+    }
+}
+
+handleClearOrders();

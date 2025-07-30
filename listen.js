@@ -37,30 +37,20 @@ const notes = ["https://uploads-ssl.webflow.com/640788df21cddc9b2f29bc16/645346b
 
 rangeImg.src = "https://uploads-ssl.webflow.com/640788df21cddc9b2f29bc16/645346bea087c6193b25c72f_89-G.png"
 
-value.addEventListener('input', () => { rangeImg.src = notes[value.value - 72] });
+value.addEventListener('input', () => { rangeImg.src = notes[value.value - 72]; hideTrumpetRangeTag(); });
 
 // hide the trumpet range tag
-// const filterTags = document.querySelectorAll('.active-tags');
-// function hideTrumpetRangeTag() {
-// 	for (let i = 0; i < filterTags.length; i++) {
-// 		const tag = filterTags[i].querySelector('.tag-text');
-// 		if (tag.innerHTML.includes("[")) {
-// 			filterTags[i].style.display = "none";
-// 		}
-// 	}
-// }
-
-
-window.addEventListener("load", function(event) {
+function hideTrumpetRangeTag() {
 	const tagTexts = document.querySelectorAll('.tag-text');
-	function hideTrumpetRangeTag() {
-		for (tag of tagTexts) {
-			console.log(tag.innerHTML);
-			if (tag.innerHTML.includes("--")) {
-				tag.parentElement.style.display = "none"; // Hide the parent element of the tag
-			}
+	for (tag of tagTexts) {
+		console.log(tag.innerHTML);
+		if (tag.innerHTML.includes("--")) {
+			tag.parentElement.style.display = "none"; // Hide the parent element of the tag
 		}
 	}
+}
+
+window.addEventListener("load", function (event) {
 	hideTrumpetRangeTag();
 });
 

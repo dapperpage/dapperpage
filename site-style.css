@@ -33,15 +33,15 @@
 
 #DPM25004 {
 	rotate: -10deg;
-	transform: translate(calc(var(--cover-width) * -1), var(--cover-height));
+	transform: translate(calc(var(--cover-width) * -1), calc(var(--cover-height) * -1));
 }
 
 #DPM25005 {
 	rotate: 10deg;
-	transform: translate(0, var(--cover-height));
+	transform: translate(0, calc(var(--cover-height) * -1));
 }
 
 #DPM25006 {
 	rotate: -10deg;
-	transform: translate(calc(var(--cover-width)), var(--cover-height));
+	transform: translate(calc(var(--cover-width)), calc(var(--cover-height) * -1));
 }

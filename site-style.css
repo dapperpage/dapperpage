@@ -16,32 +16,30 @@
 	touch-action: none;
 }
 
+.new-chart-card {
+	transform-origin: center center;
+}
+
 #DPM25001 {
-	rotate: 10deg;
-	transform: translate(calc(var(--cover-width) * -1), 0px);
+	transform: translate(calc(var(--cover-width) * -1), 0px) rotate(10deg);
 }
 
 #DPM25002 {
-	rotate: -10deg;
-	transform: translate(0, 0px);
+	transform: translate(0, 0px) rotate(-10deg);
 }
 
 #DPM25003 {
-	rotate: 10deg;
-	transform: translate(calc(var(--cover-width)), 0px);
+	transform: translate(calc(var(--cover-width)), 0px) rotate(10deg);
 }
 
 #DPM25004 {
-	rotate: -10deg;
-	transform: translate(calc(var(--cover-width) * -1), calc(var(--cover-height) * -1));
+	transform: translate(calc(var(--cover-width) * -1), calc(var(--cover-height) * -1)) rotate(-10deg);
 }
 
 #DPM25005 {
-	rotate: 10deg;
-	transform: translate(0, calc(var(--cover-height) * -1));
+	transform: translate(0, calc(var(--cover-height) * -1)) rotate(10deg);
 }
 
 #DPM25006 {
-	rotate: -10deg;
-	transform: translate(calc(var(--cover-width)), calc(var(--cover-height) * -1));
+	transform: translate(calc(var(--cover-width)), calc(var(--cover-height) * -1)) rotate(-10deg);
 }

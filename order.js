@@ -37,9 +37,6 @@ function handleClearOrders() {
         clearOrders(); 
         emptyListDisplay();
     });
-    // setTimeout(() => {
-    //     emptyListDisplay();
-    // }, 100);
 }
 
 function emptyListDisplay() {
@@ -60,3 +57,4 @@ function emptyListDisplay() {
 }
 
 handleClearOrders();
+emptyListDisplay();

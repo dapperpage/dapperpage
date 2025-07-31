@@ -1,0 +1,3 @@
+getStorage();
+handleFavButtons();
+handleOrderButtons();

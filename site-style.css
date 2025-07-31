@@ -21,7 +21,7 @@
 }
 
 #DPM25001 {
-	transform: translate(calc(var(--cover-width) * -1), 0px) rotate(10deg);
+	transform: translate(calc(var(--cover-width) * -1), -20px) rotate(10deg);
 }
 
 #DPM25002 {
@@ -29,17 +29,17 @@
 }
 
 #DPM25003 {
-	transform: translate(calc(var(--cover-width)), 0px) rotate(10deg);
+	transform: translate(calc(var(--cover-width)), 20px) rotate(10deg);
 }
 
 #DPM25004 {
-	transform: translate(calc(var(--cover-width) * -1), calc(var(--cover-height) * -1)) rotate(-10deg);
+	transform: translate(calc((var(--cover-width) * -1) + 20px), calc((var(--cover-height) * -1) - 20px)) rotate(-10deg);
 }
 
 #DPM25005 {
-	transform: translate(0, calc(var(--cover-height) * -1)) rotate(10deg);
+	transform: translate(-20px, calc((var(--cover-height) * -1) + 20px)) rotate(10deg);
 }
 
 #DPM25006 {
-	transform: translate(calc(var(--cover-width)), calc(var(--cover-height) * -1)) rotate(-10deg);
+	transform: translate(calc((var(--cover-width)) + 20px), calc((var(--cover-height) * -1) + 20px)) rotate(-10deg);
 }

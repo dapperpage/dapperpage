@@ -1,7 +1,13 @@
 getStorage({ favIconSrc: trashIcon, unfavIconSrc: heartIconNoFill });
-handleFavButtons({ favIconSrc: trashIcon, unfavIconSrc: heartIconNoFill });
+//handleFavButtons({ favIconSrc: trashIcon, unfavIconSrc: heartIconNoFill });
 handleOrderButtons({ favIconSrc: trashIcon, unfavIconSrc: heartIconNoFill });
 animateDropdown();
+
+const siteFavorites = handleFavButtons({ favIconSrc: trashIcon, unfavIconSrc: heartIconNoFill });
+handleFavButtons = function() {
+    siteFavorites();
+    emptyFavsDisplay();
+}
 
 // Clear all favorites
 const clearFavsBtn = document.getElementById("clearFavs");

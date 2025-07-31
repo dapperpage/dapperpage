@@ -34,15 +34,21 @@ printOrderBtn.addEventListener("click", () => {
 const clearOrdersBtn = document.getElementById("clearPO");
 function handleClearOrders() {
     clearOrdersBtn.addEventListener("click", () => {clearOrders();});
-    displayClearOrdersButton();
+    emptyListDisplay();
 }
 
-function displayClearOrdersButton() {
+function emptyListDisplay() {
     const orders = document.querySelectorAll('.is-order');
+    const emptyList = document.getElementById("emptyList");
+    const pageView = document.getElementById("pageView");
     if (orders.length === 0) {
         clearOrdersBtn.style.display = "none";
+        emptyList.style.display = "block"; // Show the empty list message
+        pageView.style.display = "none"; // Hide the page view if no orders
     } else {
         clearOrdersBtn.style.display = "block";
+        emptyList.style.display = "none"; // Hide the empty list message
+        pageView.style.display = "block"; // Show the page view if there are orders
     }
 }
 

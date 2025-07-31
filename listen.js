@@ -2,6 +2,7 @@ getStorage();
 handleFavButtons();
 handleOrderButtons();
 animateDropdown();
+hideTrumpetRangeTag();
 
 //"Listen Now" button function
 const listenNowBtn = document.getElementById("listenButton");
@@ -39,11 +40,11 @@ rangeImg.src = "https://uploads-ssl.webflow.com/640788df21cddc9b2f29bc16/645346b
 
 value.addEventListener('input', () => { rangeImg.src = notes[value.value - 72]; hideTrumpetRangeTag(); });
 
+
 // hide the trumpet range tag
 function hideTrumpetRangeTag() {
 	const tagTexts = document.querySelectorAll('.tag-text');
 	for (tag of tagTexts) {
-		console.log(tag.innerHTML);
 		if (tag.innerHTML.includes("--")) {
 			tag.parentElement.style.display = "none"; // Hide the parent element of the tag
 		}

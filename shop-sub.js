@@ -1,6 +1,7 @@
 getStorage();
 handleFavButtons();
 handleOrderButtons();
+hideTrumpetRangeTag();
 
 //Trumpet Range slider images
 const value = document.getElementById("field");
@@ -27,7 +28,6 @@ const notes = ["https://uploads-ssl.webflow.com/640788df21cddc9b2f29bc16/645346b
 rangeImg.src = "https://uploads-ssl.webflow.com/640788df21cddc9b2f29bc16/645346bea087c6193b25c72f_89-G.png"
 
 value.addEventListener('input', (e) => { 
-    e.stopPropagation(); 
     rangeImg.src = notes[value.value - 72]; 
     hideTrumpetRangeTag(); 
 });

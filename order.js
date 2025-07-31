@@ -3,6 +3,18 @@ handleFavButtons({ orderIconSrc: trashIcon, noOrderIconSrc: listIconLight });
 handleOrderButtons({ orderIconSrc: trashIcon, noOrderIconSrc: listIconLight });
 animateDropdown();
 
+// Check for empty list when order buttons are clicked
+function orderButtonEmptyListDisplay() {
+    const orderButtons = document.querySelectorAll('.order-button');
+    orderButtons.forEach((order) => {
+        order.addEventListener('click', () => {
+            emptyListDisplay();
+        });
+    });
+}
+
+orderButtonEmptyListDisplay();
+
 // Print Order
 const printOrderBtn = document.getElementById("printOrder");
 const printHeading = document.querySelector(".print-heading");

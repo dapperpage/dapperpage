@@ -6,3 +6,7 @@
 .pointer {
 	pointer-events: none;
 }
+
+.range-slider-track {
+	touch-action: none;
+}

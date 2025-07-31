@@ -8,26 +8,26 @@ const clearFavsBtn = document.getElementById("clearFavs");
 function handleClearFavorites() {
     clearFavsBtn.addEventListener("click", () => {
         clearFavorites();
-        // emptyFavsDisplay();
+        emptyFavsDisplay();
     });
 }
 
 function emptyFavsDisplay() {
     const favorites = document.querySelectorAll('.is-favorite');
     const emptyList = document.getElementById("emptyList");
-    // if (favorites.length === 0) {
-    //     clearFavsBtn.style.display = "none";
-    //     emptyList.style.display = "block"; // Show the empty list message
-    // } else {
-    //     clearFavsBtn.style.display = "block";
-    //     emptyList.style.display = "none"; // Hide the empty list message
-    // }
-    while (favorites.length > 0) {
+    if (favorites.length === 0) {
+        clearFavsBtn.style.display = "none";
+        emptyList.style.display = "block"; // Show the empty list message
+    } else {
         clearFavsBtn.style.display = "block";
         emptyList.style.display = "none"; // Hide the empty list message
     }
-    clearFavsBtn.style.display = "none";
-    emptyList.style.display = "block"; // Show the empty list message
+    // while (favorites.length > 0) {
+    //     clearFavsBtn.style.display = "block";
+    //     emptyList.style.display = "none"; // Hide the empty list message
+    // }
+    // clearFavsBtn.style.display = "none";
+    // emptyList.style.display = "block"; // Show the empty list message
 }
 
 handleClearFavorites();

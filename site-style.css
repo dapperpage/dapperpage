@@ -1,3 +1,8 @@
+:root {
+	--cover-width: 240px;
+	--cover-height: 316px;
+}
+
 .w-commerce-commercecartcontainerwrapper--cartType-modal {
 	height: 100dvh;
 	z-index: 1000;
@@ -9,4 +14,34 @@
 
 .range-slider-track {
 	touch-action: none;
+}
+
+#DPM25001 {
+	rotate: 10deg;
+	transform: translate(calc(var(--cover-width) * -1), 0px);
+}
+
+#DPM25002 {
+	rotate: -10deg;
+	transform: translate(0, 0px);
+}
+
+#DPM25003 {
+	rotate: 10deg;
+	transform: translate(calc(var(--cover-width)), 0px);
+}
+
+#DPM25004 {
+	rotate: -10deg;
+	transform: translate(calc(var(--cover-width) * -1), var(--cover-height));
+}
+
+#DPM25005 {
+	rotate: 10deg;
+	transform: translate(0, var(--cover-height));
+}
+
+#DPM25006 {
+	rotate: -10deg;
+	transform: translate(calc(var(--cover-width)), var(--cover-height));
 }

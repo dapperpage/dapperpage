@@ -1,13 +1,19 @@
 getStorage({ favIconSrc: trashIcon, unfavIconSrc: heartIconNoFill });
-//handleFavButtons({ favIconSrc: trashIcon, unfavIconSrc: heartIconNoFill });
+handleFavButtons({ favIconSrc: trashIcon, unfavIconSrc: heartIconNoFill });
 handleOrderButtons({ favIconSrc: trashIcon, unfavIconSrc: heartIconNoFill });
 animateDropdown();
 
-const siteFavorites = handleFavButtons({ favIconSrc: trashIcon, unfavIconSrc: heartIconNoFill });
-handleFavButtons = function() {
-    siteFavorites();
-    emptyFavsDisplay();
+// check for empty list when fav buttons are clicked
+function favButtonEmptyListDisplay() {
+    const favorites = document.querySelectorAll('.is-favorite');
+    favorites.forEach((fav) => {
+        fav.addEventListener('click', () => {
+            emptyFavsDisplay();
+        });
+    });
 }
+
+favButtonEmptyListDisplay();
 
 // Clear all favorites
 const clearFavsBtn = document.getElementById("clearFavs");
@@ -39,14 +45,3 @@ function emptyFavsDisplay() {
 handleClearFavorites();
 emptyFavsDisplay();
 
-// also check for empty list when fav buttons are clicked
-function favButtonEmptyListDisplay() {
-    const favorites = document.querySelectorAll('.is-favorite');
-    favorites.forEach((fav) => {
-        fav.addEventListener('click', () => {
-            emptyFavsDisplay();
-        });
-    });
-}
-
-favButtonEmptyListDisplay();

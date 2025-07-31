@@ -33,10 +33,13 @@ printOrderBtn.addEventListener("click", () => {
 // Clear all orders
 const clearOrdersBtn = document.getElementById("clearPO");
 function handleClearOrders() {
-    clearOrdersBtn.addEventListener("click", () => {clearOrders();});
-    setTimeout(() => {
+    clearOrdersBtn.addEventListener("click", () => {
+        clearOrders(); 
         emptyListDisplay();
-    }, 100);
+    });
+    // setTimeout(() => {
+    //     emptyListDisplay();
+    // }, 100);
 }
 
 function emptyListDisplay() {

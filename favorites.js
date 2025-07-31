@@ -38,3 +38,13 @@ function emptyFavsDisplay() {
 
 handleClearFavorites();
 emptyFavsDisplay();
+
+// also check for empty list when fav buttons are clicked
+function favButtonEmptyListDisplay() {
+    const favorites = document.querySelectorAll('.is-favorite');
+    favorites.forEach((fav) => {
+        fav.addEventListener('click', () => {
+            emptyFavsDisplay();
+        });
+    });
+}

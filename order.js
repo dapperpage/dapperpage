@@ -34,7 +34,9 @@ printOrderBtn.addEventListener("click", () => {
 const clearOrdersBtn = document.getElementById("clearPO");
 function handleClearOrders() {
     clearOrdersBtn.addEventListener("click", () => {clearOrders();});
-    emptyListDisplay();
+    setTimeout(() => {
+        emptyListDisplay();
+    }, 100);
 }
 
 function emptyListDisplay() {

@@ -17,21 +17,10 @@
 	touch-action: none;
 }
 
-
-
-/* #DPM25001, #DPM25003, #DPM25005 {
+#DPM25001, #DPM25003, #DPM25005 {
 	transform: rotate(var(--card-deg));
 }
 
 #DPM25002, #DPM25004, #DPM25006 {
 	transform: rotate(calc(var(--card-deg) * -1));
-} */
-
-.new-chart-card:nth-of-type(odd) {
-	transform: rotate(var(--card-deg));
 }
-
-.new-chart-card:nth-of-type(even) {
-	transform: rotate(calc(var(--card-deg) * -1));
-}
-

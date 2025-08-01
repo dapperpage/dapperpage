@@ -1,7 +1,7 @@
 :root {
 	--cover-width: 240px;
 	--cover-height: 316px;
-	--card-deg: 10deg;
+	--card-deg: 5deg;
 }
 
 .w-commerce-commercecartcontainerwrapper--cartType-modal {
@@ -21,24 +21,21 @@
 
 #DPM25001, #DPM25003, #DPM25005 {
 	transform: rotate(var(--card-deg));
+	animation: rotate linear;
+	animation-timeline: view();
 }
 
 #DPM25002, #DPM25004, #DPM25006 {
 	transform: rotate(calc(var(--card-deg) * -1));
+	animation: rotate reverse linear;
+	animation-timeline: view();
 }
 
-/* #DPM25003 {
-	transform: translate(calc(var(--cover-width)), 20px) rotate(10deg);
+@keyframes rotate {
+	0% {
+		transform: rotate(var(--card-deg));
+	}
+	100% {
+		transform: rotate(calc(var(--card-deg) * -1));
+	}
 }
-
-#DPM25004 {
-	transform: translate(calc((var(--cover-width) * -1) + 20px), calc((var(--cover-height) * -1) + 20px)) rotate(-10deg);
-}
-
-#DPM25005 {
-	transform: translate(-20px, calc((var(--cover-height) * -1) + 20px)) rotate(10deg);
-}
-
-#DPM25006 {
-	transform: translate(calc((var(--cover-width)) + 20px), calc((var(--cover-height) * -1) + 20px)) rotate(-10deg);
-} */

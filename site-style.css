@@ -1,7 +1,7 @@
 :root {
 	--cover-width: 240px;
 	--cover-height: 316px;
-	--card-deg: 5deg;
+	--card-deg: 10deg;
 }
 
 .w-commerce-commercecartcontainerwrapper--cartType-modal {
@@ -27,15 +27,24 @@
 
 #DPM25002, #DPM25004, #DPM25006 {
 	transform: rotate(calc(var(--card-deg) * -1));
-	animation: rotate reverse linear;
+	animation: rotate-reverse linear;
 	animation-timeline: view();
 }
 
 @keyframes rotate {
-	0% {
+	from {
 		transform: rotate(var(--card-deg));
 	}
-	100% {
+	to {
 		transform: rotate(calc(var(--card-deg) * -1));
+	}
+}
+
+@keyframes rotate-reverse {
+	from {
+		transform: rotate(calc(var(--card-deg) * -1));
+	}
+	to {
+		transform: rotate(var(--card-deg));
 	}
 }

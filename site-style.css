@@ -19,32 +19,19 @@
 
 
 
-#DPM25001, #DPM25003, #DPM25005 {
+/* #DPM25001, #DPM25003, #DPM25005 {
 	transform: rotate(var(--card-deg));
-	animation: rotate linear;
-	animation-timeline: view();
 }
 
 #DPM25002, #DPM25004, #DPM25006 {
 	transform: rotate(calc(var(--card-deg) * -1));
-	animation: rotate-reverse linear;
-	animation-timeline: view();
+} */
+
+.new-chart-card:nth-of-type(odd) {
+	transform: rotate(var(--card-deg));
 }
 
-@keyframes rotate {
-	from {
-		transform: rotate(var(--card-deg));
-	}
-	to {
-		transform: rotate(calc(var(--card-deg) * -1));
-	}
+.new-chart-card:nth-of-type(even) {
+	transform: rotate(calc(var(--card-deg) * -1));
 }
 
-@keyframes rotate-reverse {
-	from {
-		transform: rotate(calc(var(--card-deg) * -1));
-	}
-	to {
-		transform: rotate(var(--card-deg));
-	}
-}

@@ -17,6 +17,10 @@
 	touch-action: none;
 }
 
+.golden-text {
+	text-shadow: 0px 2px 5px rgba(148, 119, 67, 0.84);
+}
+
 #DPM25001, #DPM25003, #DPM25005 {
 	rotate: var(--card-deg);
 }

@@ -25,9 +25,7 @@ window.addEventListener("load", () => {
 });
 
 function printOrder() {
-    printHeading.style.display = "block"; // Show the heading for printing
     window.print(); // Trigger the print dialog
-    printHeading.style.display = "none"; // Hide the heading after printing
 }
 
 printOrderBtn.addEventListener("click", () => {

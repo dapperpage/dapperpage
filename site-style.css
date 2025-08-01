@@ -18,9 +18,9 @@
 }
 
 #DPM25001, #DPM25003, #DPM25005 {
-	transform: rotate(var(--card-deg));
+	rotate: var(--card-deg);
 }
 
 #DPM25002, #DPM25004, #DPM25006 {
-	transform: rotate(calc(var(--card-deg) * -1));
+	rotate: calc(var(--card-deg) * -1);
 }

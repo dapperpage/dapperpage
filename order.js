@@ -112,8 +112,7 @@ function schoolInfo() {
         poZip.innerHTML = zip.value;
     });
     phone.addEventListener("input", () => {
-        const phoneNumber = phone.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
-        poPhone.innerHTML = !phoneNumber[2] ? phoneNumber[1] : `(${phoneNumber[1]}) ${phoneNumber[2]}`;
+        poPhone.innerHTML = phone.value;
     });
     email.addEventListener("input", () => {
         poEmail.innerHTML = email.value;

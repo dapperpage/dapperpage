@@ -103,10 +103,10 @@ function schoolInfo() {
         poAddress2.innerHTML = address2.value;
     });
     city.addEventListener("input", () => {
-        poCity.innerHTML = city.value;
+        poCity.innerHTML = city.value + ", ";
     });
-    state.addEventListener("input", () => {
-        poState.innerHTML = state.value;
+    state.addEventListener("change", () => {
+        poState.innerHTML = state.value + " ";
     });
     zip.addEventListener("input", () => {
         poZip.innerHTML = zip.value;

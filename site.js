@@ -228,3 +228,28 @@ function animateDropdown() {
       });
    });
 }
+
+// If free guide is in local storage, hide free guide button and section
+function hideFreeGuide() {
+   const freeGuideSection = document.getElementById("freeGuideSection");
+   const freeGuideModalButton = document.getElementById("freeModalTrigger");
+
+   if (localStorage.getItem("freeGuide")) {
+      freeGuideSection.style.display = "none";
+      freeGuideModalButton.style.display = "none";
+   }
+}
+
+hideFreeGuide();
+
+// If free guide is downloaded, set local storage item
+function setFreeGuide() {
+   const freeGuideButtons = document.getElementsByClassName("free-guide-button");
+
+   freeGuideButtons.forEach((button) => button.addEventListener("click", () => {
+      localStorage.setItem("freeGuide", "true");
+      hideFreeGuide();
+   }));
+}
+
+setFreeGuide();

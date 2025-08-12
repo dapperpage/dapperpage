@@ -23,4 +23,9 @@
   .print-heading {
     display: block;
   }
+
+  .order-list-container {
+    margin: 0;
+    padding: 0;
+  }
 }

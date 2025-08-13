@@ -126,7 +126,7 @@ function calculateOrderTotal() {
     const orderItems = document.querySelectorAll('.is-order');
     let total = 0;
     orderItems.forEach((item) => {
-        const price = parseFloat(item.dataset.price);
+        const price = parseFloat(item.dataset.price.replace(/^\$/, ''));
         total += price;
     });
     const orderTotal = document.getElementById('orderTotal');

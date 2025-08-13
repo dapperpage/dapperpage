@@ -16,7 +16,7 @@
         margin-top: 1in;
     }
 
-  .sidebar, .footer, .nav-bar, .no-print { 
+  .sidebar, .footer, .nav-bar, .no-print, .clear-all { 
     display: none;
   }
 

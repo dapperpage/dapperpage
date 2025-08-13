@@ -132,3 +132,5 @@ function calculateOrderTotal() {
     const orderTotal = document.getElementById('orderTotal');
     orderTotal.innerHTML = "$" + total.toFixed(2);
 }
+
+calculateOrderTotal();

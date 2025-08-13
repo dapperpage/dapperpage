@@ -246,13 +246,12 @@ hideFreeGuide();
 function setFreeGuide() {
    const freeGuideButtons = document.getElementsByClassName("free-guide-button");
 
-   // freeGuideButtons.forEach((button) => button.addEventListener("click", () => {
-   //    localStorage.setItem("freeGuide", "true");
-   //    hideFreeGuide();
-   // }));
-   freeGuideButtons.forEach((button) => {
-      console.log(button);
-   });
+   for (let i = 0; i < freeGuideButtons.length; i++) {
+      freeGuideButtons[i].addEventListener("click", () => {
+         localStorage.setItem("freeGuide", "true");
+         hideFreeGuide();
+      });
+   }
 }
 
 setFreeGuide();

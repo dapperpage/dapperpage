@@ -53,16 +53,19 @@ function emptyListDisplay() {
     const orders = document.querySelectorAll('.is-order');
     const emptyList = document.getElementById("emptyList");
     const pageView = document.getElementById("pageView");
+    const poForm = document.getElementById("poForm");
     if (orders.length === 0) {
         clearOrdersBtn.style.display = "none";
         emptyList.style.display = "block"; // Show the empty list message
         pageView.style.display = "none"; // Hide the page view if no orders
         printOrderBtn.style.display = "none"; // Hide the print button if no orders
+        poForm.style.display = "none"; // Hide the purchase order form if no orders
     } else {
         clearOrdersBtn.style.display = "block";
         emptyList.style.display = "none"; // Hide the empty list message
         pageView.style.display = "block"; // Show the page view if there are orders
         printOrderBtn.style.display = "block"; // Show the print button if there are orders
+        poForm.style.display = "block"; // Show the purchase order form if there are orders
     }
 }
 

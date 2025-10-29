@@ -5,7 +5,6 @@ animateDropdown();
 
 // check for empty list when fav buttons are clicked
 function favButtonEmptyListDisplay() {
-    //const favorites = document.querySelectorAll('.is-favorite');
     const favButtons = document.querySelectorAll('.fav-button');
     favButtons.forEach((fav) => {
         fav.addEventListener('click', () => {

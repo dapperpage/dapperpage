@@ -66,7 +66,8 @@ customTab.addEventListener("click", () => {
 // FUNCTIONS
 // Takes values from inputs and generates title in title case
 function generateTitle() {
-    titleText = `${verbing.value} ${nouns.value}`;
+    // titleText = `${verbing.value} ${nouns.value}`;
+    titleText = madlib12(verbing.value, nouns.value);
     titleText = titleText.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
     title.textContent = titleText;
     titleEntry.value = titleText;
@@ -88,4 +89,25 @@ function customTitleSubmission() {
     titleText = titleSubmission.value;
     title.textContent = titleText;
     titleEntry.value = titleText;
+}
+
+// class Madlib {
+//     constructor({ noun, nouns, verb, verbing, adjective, place }) {
+//         this.noun = noun;
+//         this.nouns = nouns;
+//         this.verb = verb;
+//         this.verbing = verbing;
+//         this.adjective = adjective;
+//         this.place = place;
+//     }
+// }
+
+function madlib1(nouns, verb) {
+    titleText = `All the ${nouns} you ${verb}`;
+    return titleText;
+}
+
+function madlib12(verbing, nouns) {
+    titleText = `${verbing} the ${nouns}`;
+    return titleText;
 }

@@ -35,4 +35,6 @@ function reset() {
     nouns.value = "";
     verbing.value = "";
     title.textContent = "";
+    titleEntry.value = "";
+    modal.classList.add("hidden");
 }

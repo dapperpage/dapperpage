@@ -4,6 +4,7 @@ const subBtn1 = document.querySelector("#sub-btn-1");
 const modal = document.querySelector("#tt-modal");
 const title = document.querySelector("#tt-title");
 const resetBtn = document.querySelector("#reset-btn");
+const titleEntry = document.querySelector("#title-entry");
 
 subBtn1.addEventListener("click", () => {
     generateTitle();
@@ -22,6 +23,7 @@ function generateTitle() {
     titleText = `${verbing.value} ${nouns.value}`;
     titleText = titleText.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
     title.textContent = titleText;
+    titleEntry.value = titleText;
 }
 
 function reset() {

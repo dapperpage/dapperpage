@@ -78,6 +78,7 @@ function reset() {
     verbing.value = "";
     title.textContent = "";
     titleEntry.value = "";
+    titleSubmission.value = "";
     modal.classList.add("hidden");
 }
 

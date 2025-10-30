@@ -2,6 +2,7 @@ const nouns = document.querySelector("#plural-noun");
 const verbing = document.querySelector("#verb-ending-in--ing");
 const subBtn1 = document.querySelector("#sub-btn-1");
 const modal = document.querySelector("#tt-modal");
+const modalContainer = document.querySelector("#tt-modal-container");
 const title = document.querySelector("#tt-title");
 const resetBtn = document.querySelector("#reset-btn");
 const titleEntry = document.querySelector("#title-entry");
@@ -17,6 +18,10 @@ modal.addEventListener("click", () => {
 
 resetBtn.addEventListener("click", () => {
     reset();
+});
+
+modalContainer.addEventListener("click", (e) => {
+    e.stopPropagation();
 });
 
 function generateTitle() {

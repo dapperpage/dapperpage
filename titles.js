@@ -6,6 +6,7 @@ const modalContainer = document.querySelector("#tt-modal-container");
 const title = document.querySelector("#tt-title");
 const resetBtn = document.querySelector("#reset-btn");
 const titleEntry = document.querySelector("#title-entry");
+let titleText;
 
 subBtn1.addEventListener("click", () => {
     generateTitle();

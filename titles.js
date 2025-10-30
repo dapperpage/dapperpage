@@ -49,15 +49,15 @@ modalContainer.addEventListener("click", (e) => {
 // Switches between madlib and custom title tabs
 madlibTab.addEventListener("click", () => {
     madlib.classList.remove("hidden");
-    madlibTab.classList.add("active");
+    madlibTab.classList.add("is-active");
     custom.classList.add("hidden");
-    customTab.classList.remove("active");
+    customTab.classList.remove("is-active");
 });
 
 customTab.addEventListener("click", () => {
     madlib.classList.add("hidden");
-    madlibTab.classList.remove("active");
-    customTab.classList.add("active");
+    madlibTab.classList.remove("is-active");
+    customTab.classList.add("is-active");
     custom.classList.remove("hidden");
 });
 

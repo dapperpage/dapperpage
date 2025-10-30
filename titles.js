@@ -11,6 +11,7 @@ const madlibTab = document.querySelector("#madlib-tab");
 const customTab = document.querySelector("#custom-tab");
 const madlib = document.querySelector("#madlib");
 const custom = document.querySelector("#custom");
+const titleSubmission = document.querySelector("#title-submission");
 let titleText;
 
 
@@ -83,7 +84,7 @@ function reset() {
 
 // Custom title submission
 function customTitleSubmission() {
-    titleText = titleEntry.value;
+    titleText = titleSubmission.value;
     title.textContent = titleText;
     titleEntry.value = titleText;
 }

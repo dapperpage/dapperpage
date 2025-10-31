@@ -12,7 +12,7 @@ const madlib = document.querySelector("#madlib");
 const custom = document.querySelector("#custom");
 const titleSubmission = document.querySelector("#title-submission");
 const madlibs = [];
-const fieldTypes = [noun, nouns, verb, verbing, adjective, place];
+const fieldTypes = [];
 let titleText;
 let index;
 
@@ -20,26 +20,32 @@ const noun = {
     text: document.querySelector("#noun"),
     container: document.querySelector("#noun-cont")
 }
+fieldTypes.push(noun);
 const nouns = {
     text: document.querySelector("#nouns"),
     container: document.querySelector("#nouns-cont")
 }
+fieldTypes.push(nouns);
 const verb = {
     text: document.querySelector("#verb"),
     container: document.querySelector("#verb-cont")
 }
+fieldTypes.push(verb);
 const verbing = {
     text: document.querySelector("#verb-ending-in--ing"),
     container: document.querySelector("#verbing-cont")
 }
+fieldTypes.push(verbing);
 const adjective = {
     text: document.querySelector("#adjective"),
     container: document.querySelector("#adj-cont")
 }
+fieldTypes.push(adjective);
 const place = {
     text: document.querySelector("#place"),
     container: document.querySelector("#place-cont")
 }
+fieldTypes.push(place);
 
 const madlib1 = {
     field1: nouns,
@@ -146,9 +152,9 @@ function newIndex() {
 // show the needed fields
 function show(field1, field2) {
     for (let i = 0; i < fieldTypes.length; i++) {
-        if (fieldTypes[i] != (field1 || field2)) {
+        
         fieldTypes[i].container.classList.add('hidden');
-        }
+        
     }
     field1.container.classList.remove("hidden");
     field2.container.classList.remove("hidden");

@@ -12,6 +12,7 @@ const madlib = document.querySelector("#madlib");
 const custom = document.querySelector("#custom");
 const titleSubmission = document.querySelector("#title-submission");
 const madlibs = [];
+const fieldTypes = [noun, nouns, verb, verbing, adjective, place];
 let titleText;
 let index;
 
@@ -41,24 +42,24 @@ const place = {
 }
 
 const madlib1 = {
-  field1: nouns,
-  field2: verb,
-  title: function() {
-    let ns = nouns.text.value;
-    let v = verb.text.value;
-    return `All the ${ns} you ${v}`;
-  }
+    field1: nouns,
+    field2: verb,
+    title: function () {
+        let ns = nouns.text.value;
+        let v = verb.text.value;
+        return `All the ${ns} you ${v}`;
+    }
 }
 madlibs.push(madlib1);
 
 const madlib2 = {
-  field1: noun,
-  field2: nouns,
-  title: function() {
-    let n = noun.text.value;
-    let ns = nouns.text.value;
-    return `Days of ${n} and ${ns}`;
-  }
+    field1: noun,
+    field2: nouns,
+    title: function () {
+        let n = noun.text.value;
+        let ns = nouns.text.value;
+        return `Days of ${n} and ${ns}`;
+    }
 }
 madlibs.push(madlib2);
 
@@ -134,6 +135,7 @@ function reset() {
     titleEntry.value = "";
     titleSubmission.value = "";
     modal.classList.add("hidden");
+    show();
 }
 
 // New index for madlibs
@@ -143,8 +145,11 @@ function newIndex() {
 
 // show the needed fields
 function show(field1, field2) {
-  field1.container.classList.remove("hidden");
-  field2.container.classList.remove("hidden");
+    for (let i = 0; i < fieldTypes.length; i++) {
+        fieldTypes[i].container.classList.add('hidden');
+    }
+    field1.container.classList.remove("hidden");
+    field2.container.classList.remove("hidden");
 }
 
 // Custom title submission

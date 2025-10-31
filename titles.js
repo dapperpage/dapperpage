@@ -39,15 +39,16 @@ const place = {
 }
 
 const madlib1 = {
-    loadFields: function() {
+    loadFields: function () {
         nouns.container.classList.remove('hidden');
         verb.container.classList.remove('hidden');
     },
 
-    ns: nouns.text.value,
-    v: verb.text.value,
+
 
     submitTitle: function () {
+        let ns = nouns.text.value;
+        let v = verb.text.value;
         titleText = `All the ${ns} you ${v}`;
         return titleText;
     }

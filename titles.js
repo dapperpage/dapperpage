@@ -11,7 +11,9 @@ const customTab = document.querySelector("#custom-tab");
 const madlib = document.querySelector("#madlib");
 const custom = document.querySelector("#custom");
 const titleSubmission = document.querySelector("#title-submission");
+const madlibs = [];
 let titleText;
+let index;
 
 const noun = {
     text: document.querySelector("#noun"),
@@ -19,7 +21,7 @@ const noun = {
 }
 const nouns = {
     text: document.querySelector("#nouns"),
-    container: document.querySelector("#noun-cont")
+    container: document.querySelector("#nouns-cont")
 }
 const verb = {
     text: document.querySelector("#verb"),
@@ -39,31 +41,35 @@ const place = {
 }
 
 const madlib1 = {
-    loadFields: function () {
-        nouns.container.classList.remove('hidden');
-        verb.container.classList.remove('hidden');
-    },
-
-
-
-    submitTitle: function () {
-        let ns = nouns.text.value;
-        let v = verb.text.value;
-        titleText = `All the ${ns} you ${v}`;
-        return titleText;
-    }
+  field1: nouns,
+  field2: verb,
+  title: function() {
+    let ns = nouns.text.value;
+    let v = verb.text.value;
+    return `All the ${ns} you ${v}`;
+  }
 }
+madlibs.push(madlib1);
 
-function madlib12(verbing, nouns) {
-    titleText = `${verbing} the ${nouns}`;
-    return titleText;
+const madlib2 = {
+  field1: noun,
+  field2: nouns,
+  title: function() {
+    let n = noun.text.value;
+    let ns = nouns.text.value;
+    return `Days of ${n} and ${ns}`;
+  }
 }
+madlibs.push(madlib2);
+
+
 
 
 // EVENT LISTENERS
 // When page loads start first madlib
 document.addEventListener('DOMContentLoaded', () => {
-    madlib1.loadFields();
+    newIndex();
+    show(madlibs[index].field1, madlibs[index].field2);
 });
 
 // Submit button for madlib title
@@ -80,6 +86,7 @@ subBtn2.addEventListener("click", () => {
 
 // 'Reset' button clears all fields and closes modal
 resetBtn.addEventListener("click", () => {
+    newIndex();
     reset();
 });
 
@@ -109,9 +116,7 @@ customTab.addEventListener("click", () => {
 // FUNCTIONS
 // Takes values from inputs and generates title in title case
 function generateTitle() {
-    // titleText = `${verbing.value} ${nouns.value}`;
-    // titleText = madlib12(verbing.value, nouns.value);
-    titleText = madlib1.submitTitle;
+    titleText = madlibs[index].title();
     titleText = titleText.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
     title.textContent = titleText;
     titleEntry.value = titleText;
@@ -127,6 +132,16 @@ function reset() {
     modal.classList.add("hidden");
 }
 
+// New index for madlibs
+function newIndex() {
+    index = Math.floor(Math.random() * madlibs.length);
+}
+
+// show the needed fields
+function show(field1, field2) {
+  field1.container.classList.remove("hidden");
+  field2.container.classList.remove("hidden");
+}
 
 // Custom title submission
 function customTitleSubmission() {

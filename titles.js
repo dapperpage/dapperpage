@@ -1,5 +1,4 @@
-const nouns = document.querySelector("#plural-noun");
-const verbing = document.querySelector("#verb-ending-in--ing");
+
 const subBtn1 = document.querySelector("#sub-btn-1");
 const subBtn2 = document.querySelector("#sub-btn-2");
 const modal = document.querySelector("#tt-modal");
@@ -14,26 +13,36 @@ const custom = document.querySelector("#custom");
 const titleSubmission = document.querySelector("#title-submission");
 let titleText;
 
+const noun = {
+    text: document.querySelector("#noun"),
+    container: document.querySelector("#noun-cont")
+}
+const nouns = document.querySelector("#plural-noun");
+const verb = document.querySelector("#verb");
+const verbing = document.querySelector("#verb-ending-in--ing");
+const adjective = document.querySelector("#adjective");
+const place = document.querySelector("#place");
+
 
 // EVENT LISTENERS
+// When page loads start first madlib
+document.addEventListener('DOMContentLoaded', () => {
+    noun.text.value = "hippo";
+    console.log('content loaded');
+    console.log(noun.text.value);
+});
+
 // Submit button for madlib title
 subBtn1.addEventListener("click", () => {
     generateTitle();
     modal.classList.remove("hidden");
 });
 
-
 // Submit button for custom title
 subBtn2.addEventListener("click", () => {
     customTitleSubmission();
     modal.classList.remove("hidden");
 });
-
-// hides modal when clicked outside of modal box
-// modal.addEventListener("click", () => {
-//     modal.classList.add("hidden");
-// });
-
 
 // 'Reset' button clears all fields and closes modal
 resetBtn.addEventListener("click", () => {
@@ -90,17 +99,6 @@ function customTitleSubmission() {
     title.textContent = titleText;
     titleEntry.value = titleText;
 }
-
-// class Madlib {
-//     constructor({ noun, nouns, verb, verbing, adjective, place }) {
-//         this.noun = noun;
-//         this.nouns = nouns;
-//         this.verb = verb;
-//         this.verbing = verbing;
-//         this.adjective = adjective;
-//         this.place = place;
-//     }
-// }
 
 function madlib1(nouns, verb) {
     titleText = `All the ${nouns} you ${verb}`;

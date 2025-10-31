@@ -27,9 +27,8 @@ const place = document.querySelector("#place");
 // EVENT LISTENERS
 // When page loads start first madlib
 document.addEventListener('DOMContentLoaded', () => {
-    noun.text.value = "hippo";
     console.log('content loaded');
-    console.log(noun.text.value);
+    noun.container.classList.add('hidden');
 });
 
 // Submit button for madlib title

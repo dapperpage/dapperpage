@@ -146,7 +146,9 @@ function newIndex() {
 // show the needed fields
 function show(field1, field2) {
     for (let i = 0; i < fieldTypes.length; i++) {
+        if (fieldTypes[i] != (field1 || field2)) {
         fieldTypes[i].container.classList.add('hidden');
+        }
     }
     field1.container.classList.remove("hidden");
     field2.container.classList.remove("hidden");

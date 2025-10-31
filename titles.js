@@ -124,8 +124,12 @@ function generateTitle() {
 
 // Resets all fields and hides modal
 function reset() {
-    nouns.value = "";
-    verbing.value = "";
+    noun.text.value = "";
+    nouns.text.value = "";
+    verb.text.value = "";
+    verbing.text.value = "";
+    adjective.text.value = "";
+    place.text.value = "";
     title.textContent = "";
     titleEntry.value = "";
     titleSubmission.value = "";

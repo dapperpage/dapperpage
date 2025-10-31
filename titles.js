@@ -93,7 +93,6 @@ subBtn2.addEventListener("click", () => {
 
 // 'Reset' button clears all fields and closes modal
 resetBtn.addEventListener("click", () => {
-    newIndex();
     reset();
 });
 
@@ -141,7 +140,8 @@ function reset() {
     titleEntry.value = "";
     titleSubmission.value = "";
     modal.classList.add("hidden");
-    show();
+    newIndex();
+    show(madlibs[index].field1, madlibs[index].field2);
 }
 
 // New index for madlibs

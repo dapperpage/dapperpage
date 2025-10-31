@@ -17,18 +17,52 @@ const noun = {
     text: document.querySelector("#noun"),
     container: document.querySelector("#noun-cont")
 }
-const nouns = document.querySelector("#plural-noun");
-const verb = document.querySelector("#verb");
-const verbing = document.querySelector("#verb-ending-in--ing");
-const adjective = document.querySelector("#adjective");
-const place = document.querySelector("#place");
+const nouns = {
+    text: document.querySelector("#nouns"),
+    container: document.querySelector("#noun-cont")
+}
+const verb = {
+    text: document.querySelector("#verb"),
+    container: document.querySelector("#verb-cont")
+}
+const verbing = {
+    text: document.querySelector("#verb-ending-in--ing"),
+    container: document.querySelector("#verbing-cont")
+}
+const adjective = {
+    text: document.querySelector("#adjective"),
+    container: document.querySelector("#adj-cont")
+}
+const place = {
+    text: document.querySelector("#place"),
+    container: document.querySelector("#place-cont")
+}
+
+const madlib1 = {
+    loadFields: function() {
+        nouns.container.classList.remove('hidden');
+        verb.container.classList.remove('hidden');
+    },
+
+    ns: nouns.text.value,
+    v: verb.text.value,
+
+    submitTitle: function () {
+        titleText = `All the ${ns} you ${v}`;
+        return titleText;
+    }
+}
+
+function madlib12(verbing, nouns) {
+    titleText = `${verbing} the ${nouns}`;
+    return titleText;
+}
 
 
 // EVENT LISTENERS
 // When page loads start first madlib
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('content loaded');
-    noun.container.classList.add('hidden');
+    madlib1.loadFields();
 });
 
 // Submit button for madlib title
@@ -75,7 +109,8 @@ customTab.addEventListener("click", () => {
 // Takes values from inputs and generates title in title case
 function generateTitle() {
     // titleText = `${verbing.value} ${nouns.value}`;
-    titleText = madlib12(verbing.value, nouns.value);
+    // titleText = madlib12(verbing.value, nouns.value);
+    titleText = madlib1.submitTitle;
     titleText = titleText.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
     title.textContent = titleText;
     titleEntry.value = titleText;
@@ -99,12 +134,3 @@ function customTitleSubmission() {
     titleEntry.value = titleText;
 }
 
-function madlib1(nouns, verb) {
-    titleText = `All the ${nouns} you ${verb}`;
-    return titleText;
-}
-
-function madlib12(verbing, nouns) {
-    titleText = `${verbing} the ${nouns}`;
-    return titleText;
-}

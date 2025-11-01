@@ -69,6 +69,122 @@ const madlib2 = {
 }
 madlibs.push(madlib2);
 
+const madlib3 = {
+    field1: adjective,
+    field2: noun,
+    title: function () {
+        let n = noun.text.value;
+        let a = adjective.text.value;
+        let article = "a";
+        if (a[0] === ("a" || "e" || "i" || "o" || "u")) { article = "an" };
+        return `${article} ${a} ${n}`;
+    }
+}
+madlibs.push(madlib3);
+
+const madlib4 = {
+    field1: place,
+    field2: noun,
+    title: function () {
+        let n = noun.text.value;
+        let p = place.text.value;
+        return `The ${n} from ${p}`;
+    }
+}
+madlibs.push(madlib4);
+
+const madlib5 = {
+    field1: adjective,
+    field2: noun,
+    title: function () {
+        let n = noun.text.value;
+        let a = adjective.text.value;
+        return `The ${a} side of the ${n}`;
+    }
+}
+madlibs.push(madlib5);
+
+const madlib6 = {
+    field1: verb,
+    field2: noun,
+    title: function () {
+        let n = noun.text.value;
+        let v = verb.text.value;
+        return `Someday My ${n} Will ${v}`;
+    }
+}
+madlibs.push(madlib6);
+
+const madlib7 = {
+    field1: verbing,
+    field2: place,
+    title: function () {
+        let p = place.text.value;
+        let ving = verbing.text.value;
+        return `${ving} at the ${p}`;
+    }
+}
+madlibs.push(madlib7);
+
+const madlib8 = {
+    field1: adjective,
+    field2: noun,
+    title: function () {
+        let a = adjective.text.value;
+        let n = noun.text.value;
+        return `${a} ${n}`;
+    }
+}
+madlibs.push(madlib8);
+
+const madlib9 = {
+    field1: adjective,
+    field2: noun,
+    title: function () {
+        let a = adjective.text.value;
+        let n = noun.text.value;
+        let article = "a";
+        if (a[0] === ("a" || "e" || "i" || "o" || "u")) { article = "an" };
+        return `${a} as ${article} ${n}`;
+    }
+}
+madlibs.push(madlib9);
+
+const madlib10 = {
+    field1: adjective,
+    field2: noun,
+    title: function () {
+        let a = adjective.text.value;
+        let n = noun.text.value;
+        let article = "a";
+        if (a[0] === ("a" || "e" || "i" || "o" || "u")) { article = "an" };
+        return `${a} like ${article} ${n}`;
+    }
+}
+madlibs.push(madlib10);
+
+const madlib11 = {
+    field1: verbing,
+    field2: noun,
+    title: function () {
+        let ving = verbing.text.value;
+        let n = noun.text.value;
+        return `${ving} the ${n}`;
+    }
+}
+madlibs.push(madlib11);
+
+const madlib12 = {
+    field1: verb,
+    field2: nouns,
+    title: function () {
+        let v = verb.text.value;
+        let ns = nouns.text.value;
+        return `${v} me ${ns}`;
+    }
+}
+madlibs.push(madlib12);
+
 
 
 
@@ -152,9 +268,9 @@ function newIndex() {
 // show the needed fields
 function show(field1, field2) {
     for (let i = 0; i < fieldTypes.length; i++) {
-        
+
         fieldTypes[i].container.classList.add('hidden');
-        
+
     }
     field1.container.classList.remove("hidden");
     field2.container.classList.remove("hidden");
